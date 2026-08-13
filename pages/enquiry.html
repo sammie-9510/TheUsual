@@ -3,9 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Usual Bakery - Enquiry</title>
 </head>
 <body>
     
+    <header>
+        <h1>THE USUAL BAKERY</h1>
+        <p>Family baking, three generations strong</p>
+
+        <!--main navigation menu - identical on every page so users can move around site easily-->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Send Us an Enquiry</h2>
+        <p>
+          Tell us about your event and we will get back to you with pricing and
+            availability. The more detail you give us, the better we can plan your order.  
+        </p>
+        <!-- Enquiry form. Field validation and submission handling (e.g. with
+            JavaScript or a backend script) will be added in a later part of
+            this project. For now this is the plain HTML structure only.
+        -->
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Your Details</legend>
+
+            <label for="full-name">Full Name:</label><br>
+            <input type="text" id="full-name" name="full-name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Event Details</legend>
+                <label for="event-type">Event Type:</label><br>
+                <select id="event-type" name="event-type" required>
+                    <option value="">Select an option</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="corporate">Corporate Event</option>
+                    <option value="Anniversary">Anniversary</option>
+                    <option value="milestone">Milestone Celebration</option>
+                    <option value="other">Other</option>
+                </select><br><br>
+
+                <label for="event-date">Event Date:</label><br>
+                <input type="date" id="event-date" name="event-date" required><br><br>
+
+                <label for="guests">Number of Guests:</label><br>
+                <input type="number" id="guests" name="guests" min="1" required><br><br>
+
+                <label for="inspiration-images">Upload an Inspiration Images (optional):</label><br>
+                <input type="file" id="inspiration-images" name="inspiration-images" accept="image/*" multiple><br><br>
+
+                <label for="message">Tell Us More About What You'd Like</label><br>
+                <textarea id="message" name="message" rows="6" cols="40" placeholder="Describe your vision, theme, or any special requests here..."></textarea><br><br>
+
+            </fieldset>
+
+            <button type="submit">Submit Enquiry</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Usual Bakery</p>
+        <nav>
+            <ul>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
