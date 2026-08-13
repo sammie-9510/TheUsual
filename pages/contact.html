@@ -3,9 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Usual Bakery - Contact</title>
 </head>
 <body>
-    
+   
+    <header>
+        <h1>THE USUAL BAKERY</h1>
+        <p>Family baking, three generations strong</p>
+
+        <!--main navigation menu - identical on every page so users can move around site easily-->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Visit or Contact Us</h2>
+
+        <!-- 
+            The assignment brief requires more than one location for this page.
+            The proposal only described a single bakery, so a second branch has
+            been added here as a placeholder - update the name, address and
+            hours to match the real second location once confirmed.
+        -->
+            <section id="location-main">
+        <h3>The Usual Bakery - Main Location</h3>
+        <address>
+            <p><strong>The Usual Bakery</strong></p>
+            <p>12 Baker Street, Summerstrand</p>
+            <p>Qqeberha, 6001</p>
+            <p>South Africa</p>
+            <p>Phone: <a href="tel:+274567890"> (+27) 456-7890</a></p>
+            <p>Email: <a href="mailto:info@theusualbakery.com">info@theusualbakery.com</a></p>
+        </address>
+        <p>Hours: Monday to Friday: 08:00am - 18:00pm<br>
+            Saturday: 08:00am - 15:00pm<br>
+            Sunday: Closed
+        </p>
+        </section>
+
+        <section id="location-branch">
+        <h3>The Usual Bakery - Branch Location</h3>
+        <address>
+            <p><strong>The Usual Bakery</strong></p>
+            <p>45 Rink Street, Newton Park</p>
+            <p>Qqeberha, 60011</p>
+            <p>South Africa</p>
+            <p>Phone: <a href="tel:+2711234567"> (+27) 11-234-5678</a></p>
+            <p>Email: <a href="mailto:newtonpark@theusualbakery.com">newtonpark@theusualbakery.com</a></p>
+        </address>
+        <p>Hours: Monday to Friday: 08:00am - 18:00pm<br>
+            Saturday: 08:00am - 15:00pm<br>
+            Sunday: Closed
+        </p>
+        </section>
+
+        <section id="map">
+            <h3>Find Us on the Map</h3>
+            <p>Use the map below to find our main location. The branch location is just a short drive away.</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52940.15424411089!2d25.575034169531243!3d-33.9730169213935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e6532b4f8f07cf7%3A0xbe83dee2f7f179d9!2sSummerstrand%2C%20Gqeberha!5e0!3m2!1sen!2sza!4v1786608047139!5m2!1sen!2sza" width="600" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52954.94870374211!2d25.4920346486328!3d-33.949247199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad17d0a22f07f%3A0x77fed7838a739be9!2sNewton%20Park%2C%20Gqeberha!5e0!3m2!1sen!2sza!4v1786608191262!5m2!1sen!2sza" width="600" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        
+
+        </section>
+
+        <section id="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="#" method="post">
+                <label for="contact-name">Full Name:</label><br>
+                <input type="text" id="contact-name" name="contact-name" required><br><br>
+
+                <label for="contact-email">Email Address:</label><br>
+                <input type="email" id="contact-email" name="contact-email" required><br><br>
+
+                <label for="contact-subject">Subject:</label><br>
+                <input type="text" id="contact-subject" name="contact-subject" required><br><br>
+
+                <label for="contact-message">Message:</label><br>
+                <textarea id="contact-message" name="contact-message" rows="6" cols="40" required></textarea><br><br>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 The Usual Bakery</p>
+        <nav>
+            <ul>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
