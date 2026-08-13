@@ -8,6 +8,9 @@
 <body>
     <!--header: appears at the top of every page and holds the site identity and navigation -->
     <header>
+        <div class="logo">
+            <img src="./assets/images/Logo.png" alt="The Usual Bakery logo" width="100" height="100">
+        </div>
         <h1>THE USUAL BAKERY</h1>
         <p>Family baking, three generations strong</p>
 
@@ -18,30 +21,43 @@
                 <li><a href="./pages/catalog.html">Catalog</a></li>
                 <li><a href="./pages/about-us.html">About Us</a></li>
                 <li><a href="./pages/contact.html">Contact</a></li>
+                <li><a href="./pages/enquiry.html">Enquiry</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
+        <section id="hero">
+            <img src="./assets/images/4925880839209203.jpg" alt="A custom decorated cake made by The Usual Bakery" width="600" height="500">
             <h2>Cakes and Pastries Made With 70 Years of Love</h2>
             <p>
                 The Usual is a family-owned bakery built on geneations of recipes, warmth
                 and communtiy. From birthdays to weddings to corporate events, we bake every
                 order like it is for our own family.
             </p>
-            <a href="enquiry.html">Make an Enquiry</a>
+            <a href="./pages/enquiry.html">Make an Enquiry</a>
         </section>
 
         <section id="catalogue-preview">
             <h2>What We Bake</h2>
-            <ul>
-                <li>Birthday cakes and cupcakes</li>
-                <li>Wedding and anniversary cakes</li>
-                <li>Milestone celebrations treats</li>
-                <li>Corporate event platters</li>
-            </ul>
-            <p><a href="catalog.html">View Our Full Catalogue</a></p>
+            <table border="1" cellpadding="10" cellspacing="0">
+                <caption>Our Catalogue Preview</caption>
+                <tr>
+                    <td>
+                        <h3>Birthday Cakes and Cupcakes</h3>
+                        <img src="./assets/images/492649955065050.jpg" alt="A colorful custom birthday cake" width="250" height="300"><br>
+                    </td>
+                    <td>
+                        <h3>Wedding and Anniversary Cakes</h3>
+                        <img src="./assets/images/30 Wedding Cake Ideas For Any Wedding Theme I Take….jpg" alt="A three-tiered wedding cake with floral decorations" width="250" height="300"><br>
+                    </td>
+                    <td>
+                        <h3>Milestone Celebration Treats</h3>
+                        <img src="./assets/images/8866530512385398.jpg" alt="A custom cake for a milestone birthday celebration" width="250" height="250"><br>
+                    </td>
+                </tr>
+                </table>
+            <p><a href="./pages/catalog.html">View Our Full Catalogue</a></p>
         </section>
 
         <section id="cta">
@@ -49,7 +65,7 @@
             <p> Tells us the date, the occasion, and your vision, and we will help bring it
                 to life with custom orders.
             </p>
-            <a href="enquiry.html">Make an Enquiry</a>
+            <a href="./pages/enquiry.html">Make an Enquiry</a>
         </section>
     </main>
 
@@ -57,10 +73,10 @@
         <p>&copy; 2026 The Usual Bakery</p>
         <nav>
             <ul>
-                <li><a href="catalog.html">Catalog</a></li>
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="./pages/catalog.html">Catalog</a></li>
+                <li><a href="./pages/about-us.html">About Us</a></li>
+                <li><a href="./pages/contact.html">Contact</a></li>
+                <li><a href="./pages/enquiry.html">Enquiry</a></li>
             </ul>
         </nav>
     </footer>
