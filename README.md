@@ -41,5 +41,13 @@ inspiration images, and request quotes.
 - Week 7: Update the project notes and plan how to add new cake items or prices in the future.
 ---
 ## SiteMap
+<img width="988" height="379" alt="Screenshot 2026-08-14 162750" src="https://github.com/user-attachments/assets/cb69ab57-c08e-46c2-93db-1bf922ab3af7" />
 
-
+---
+## References
+- Chaffey, D. and Ellis-Chadwick, F., 2019. Digital Marketing: Strategy, Implementation and 
+Practice. 7th ed. Harlow: Pearson Education.
+- Duckett, J., 2011. HTML and CSS: Design and Build Websites. Indianapolis, IN: John Wiley & Sons.
+- Garrett, J.J., 2011. The Elements of User Experience: User-Centered Design for the Web and 
+Beyond. 2nd ed. Berkeley, CA: New Riders.
+- Robbins, J.N., 2012. Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics. 4th ed. Sebastopol, CA: O'Reilly Media.
