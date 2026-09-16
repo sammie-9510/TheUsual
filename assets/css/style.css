@@ -28,7 +28,7 @@
   /* Colours */
   --colour-cream: #fffbf2; /* Background colour for the site */
   --colour-butter: #f5e1a4;  /*soft buttercream yellow*/
-  --colour-pink: #f7c6b2;  /* soft pink icing */
+  --colour-pink: #f7c6d9;  /* soft pink icing */
     --colour-chocolate: #3b2314;  /* dark chocolate - main text color */
     --colour-brown-light: #6b4226;
     --colour-white: #ffffff;
@@ -37,10 +37,6 @@
   --font-body: 'Nunito', sans-serif;
   --font-heading: 'Dancing Script', cursive;
 
-  /* Spacing */
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
-  --spacing-large: 32px;
 
   --radius: 12px;
   --shadow: 0 4px 10px rgba(59, 35, 20, 0.15);
@@ -210,9 +206,10 @@ ul {
      color: var(--colour-chocolate);
      font-weight: 700;
      padding: 0.75em 1.75em;
-     border-radius: 999px;
+     border-radius: 999px; /* pill shape */
      box-shadow: var(--shadow);
      border: none;
+     font-family: inherit;
      font-size: 1rem;
      cursor: pointer;
      transition: background-color 0.2s ease, transform 0.2s ease;
@@ -236,10 +233,55 @@ ul {
    rule above. This is the cascade in action: a later, more specific
    rule (#hero) wins over the earlier, more general one (main section). */
    #hero { 
-    background: none;
+    background: var(--colour-cream);
     box-shadow: none;
-    padding: 0;
+    padding: 60px 5%;
    }
+
+   .hero-container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+   }
+    /* ===== Image (left side) ===== */
+   .hero-image {
+    flex: 1;
+    max-width: 480px;
+   }
+
+   .hero-image img{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display:block
+   }
+   
+    /* ===== Text (right side) ===== */
+    .hero-text {
+        flex: 1;
+        max-width: 520px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.4rem;
+        line-height: 1.25;
+        color: var(--colour-chocolate);
+        margin-bottom: 18px;
+        font-weight: 700;
+    }
+
+    .hero-text p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--colour-chocolate);
+        margin-bottom: 28px;
+    }
+
 
    /* Catalog preview table (index.html) and category tables (products.html) */
    .table-wrap {
@@ -249,24 +291,25 @@ ul {
     table {
      width: 100%;
      border-collapse: collapse;
+     
     }
 
     caption {
         font-family: var(--font-heading);
         font-size: 1.4rem;
         margin-bottom: 0.75rem;
-        text-align: left;
+        text-align: center;
     }
 
-    th, td {
+    tr, td {
         padding: 1rem;
         text-align: center;
-        border: 1px solid var(--colour-butter);
+        border: 1px solid var(--colour-chocolate);
         vertical-align: top;
     }
 
-    th {
-        background-color: var(--colour-butter);
+    tr {
+        background-color: var(--colour-white);
         font-family: var(--font-heading);
         font-size: 1.1rem;
     }
@@ -274,6 +317,8 @@ ul {
     tr:hover td {
        background-color: rgba(247, 198, 217, 0.25);
     }
+
+    
 
     /* Contact page: two bakery locations side by side on desktop */
     .locations {
@@ -366,6 +411,50 @@ ul {
         color: var(--colour-pink);
     }
 
+    footer .email {
+        margin: 4px 0 2px;
+        font-size: 0.95rem;
+    }
+
+    footer .email a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    footer .email a:hover {
+        text-decoration: underline;
+    }
+
+    footer .tagline {
+        margin: 0 0 16px;
+        font-size: 0.9rem;
+        font-style: italic;
+        opacity: 0.85;
+    }
+
+    .social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  justify-content: center; /* or flex-start if you prefer left-aligned */
+}
+
+.social-links a {
+  color: #333; /* change to match your footer text color */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #e67e22; /* bakery-style accent color – change as needed */
+  transform: scale(1.1);
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
     /* 9. RESPONSIVE DESIGN
    Breakpoints: desktop (default styles above), tablet (<= 900px),
    mobile (<= 600px). Relative units (rem/em/%) throughout mean most
@@ -413,6 +502,20 @@ ul {
             padding: 1rem;
         }
 
+        .hero-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .hero-image{
+            max-width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 1.9rem;
+        }
+
         nav ul {
             flex-direction: column;
             align-items: flex-start;
@@ -432,9 +535,9 @@ ul {
 
         caption { font-size: 1.2rem; }
 
-        th, td {
+        tr, td {
             padding: 0.6rem;
-            font-size: o.9rem;
+            font-size: 0.9rem;
         }
        
         .btn {
