@@ -116,7 +116,7 @@ ul {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--colour-white);
+    background-color: var(--colour-pink);
     border-bottom: 1px solid var(--colour-butter);
     padding: 1.25rem 2rem;
     display: flex;
