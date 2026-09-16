@@ -1,0 +1,444 @@
+/*THE USUAL BAKERY - STYLESHEET (Part 2)
+   WEDE5020 Website Project
+ 
+   Contents:
+   1. Google Fonts import
+   2. CSS custom properties (design tokens)
+   3. CSS reset
+   4. Base / typography styles
+   5. Header & navigation
+   6. Layout helpers (split, cards, buttons)
+   7. Page-specific sections (hero, catalog, tables, locations, forms)
+   8. Footer
+   9. Responsive design (tablet + mobile breakpoints) */
+
+   /*  1. Fonts
+   Sans-serif for readable body text, a script font for headings to
+   mimic icing on a cake, as described in the Part 1 proposal. */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Dancing+Script:wght@600;700&display=swap');
+
+/* 2. Design tokens - the whole colour scheme and a few shared values
+   are defined once here. Every other rule references these variables,
+   which is what lets the "cascading" nature of CSS do the heavy lifting:
+   change a colour once, and it updates everywhere it's used. */
+
+:root {
+  /* Colours */
+  --colour-cream: #fffbf2; /* Background colour for the site */
+  --colour-butter: #f5e1a4;  /*soft buttercream yellow*/
+  --colour-pink: #f7c6b2;  /* soft pink icing */
+    --colour-chocolate: #3b2314;  /* dark chocolate - main text color */
+    --colour-brown-light: #6b4226;
+    --colour-white: #ffffff;
+
+  /* Typography */
+  --font-body: 'Nunito', sans-serif;
+  --font-heading: 'Dancing Script', cursive;
+
+  /* Spacing */
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+
+  --radius: 12px;
+  --shadow: 0 4px 10px rgba(59, 35, 20, 0.15);
+}
+
+/* 3. CSS Reset
+   A simple reset to remove default browser styles and ensure consistency
+   across different browsers. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit color from parent */
+}
+
+ul {
+  list-style: none; /* Remove default list styles */
+}
+
+/* 4. Base / Typography Styles
+   Define base styles for body text, headings, and other typographic elements. */
+   body {
+  font-family: var(--font-body);
+  background-color: var(--colour-cream);
+    color: var(--colour-chocolate);
+    font-size: 1rem;
+    line-height: 1.6;
+   }
+
+   h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--colour-chocolate);
+    line-height: 1.2;
+    margin-bottom: 0.6em;
+   }
+
+   h1 {
+    font-size: 3rem;
+   }
+   h2 {
+    font-size: 2.2rem;
+   }
+   h3 {
+    font-size: 1.7rem;
+   }
+
+   p {
+    margin-bottom: 1em;
+    max-width: 65ch; /*keeps paragraphs a comfortable reading width */
+   }
+
+   address {
+    font-style: normal; /* Override default italic style for address */
+    margin-bottom: 1em;
+   }
+
+   /*  5. Header & navigation
+   Sticky at the top so the enquiry link is always reachable, as
+   specified in the proposal's User Experience notes. */
+
+   header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--colour-white);
+    border-bottom: 1px solid var(--colour-butter);
+    padding: 1.25rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+   }
+
+   header h1 {
+    font-size: 2rem;
+    margin: 0;
+   }
+
+   nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em 2.5em;
+   }
+
+   nav a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.3em 0.1em;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+   }
+    /* interactive states - required by the brief : hover, focus, active */
+    nav a:hover,
+    nav a:focus {
+        border-color: var(--colour-brown);
+        color: var(--colour-brown-light);
+        outline: none; /* Remove default focus outline */
+    }
+
+    nav a:active {
+        color: var(--colour-pink);
+    }
+
+    footer nav a{
+        color: var(--colour-chocolate);
+    }
+
+    /* 6. Layout helpers */
+
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    /* Generic "card" look applied to every section inside main. This is a
+   deliberately broad, low-specificity selector - most sections just
+   inherit this look, and only a couple of sections need an override
+   rule further down (the cascade doing the work instead of repeating
+   the same declarations on lots of individual selectors). */
+   main section {
+    background-color: var(--colour-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+   }
+
+   /* Reusable two-column media/content split, used for the homepage hero
+   and the About Us history section. Flexbox rather than Grid here so
+   the layout degrades gracefully on any browser. */
+   .split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+   }
+
+   .split-media,
+   .split-content {
+    flex: 1 1 320px; /* each side shares the space evenly, wraps below 320px + gap */
+    min-width: 0; /* prevents flex items from overflowing their container */
+   }
+
+   .split-media img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+   }
+
+   /* Buttons / call-to-action links */
+    .btn {
+     display: inline-block;
+     background-color: var(--colour-pink);
+     color: var(--colour-chocolate);
+     font-weight: 700;
+     padding: 0.75em 1.75em;
+     border-radius: 999px;
+     box-shadow: var(--shadow);
+     border: none;
+     font-size: 1rem;
+     cursor: pointer;
+     transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+        background-color: var(--colour-butter);
+        transform: translateY(-2px);
+        outline: none; /* Remove default focus outline */
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    /* 7. Page-specific sections */
+
+    /* Hero (index.html) - uses .split, but sits on the cream background
+   rather than a white card, so it overrides the generic "main section"
+   rule above. This is the cascade in action: a later, more specific
+   rule (#hero) wins over the earlier, more general one (main section). */
+   #hero { 
+    background: none;
+    box-shadow: none;
+    padding: 0;
+   }
+
+   /* Catalog preview table (index.html) and category tables (products.html) */
+   .table-wrap {
+    overflow-x: auto; /* allows horizontal scrolling on small screens */
+   }
+
+    table {
+     width: 100%;
+     border-collapse: collapse;
+    }
+
+    caption {
+        font-family: var(--font-heading);
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 1rem;
+        text-align: center;
+        border: 1px solid var(--colour-butter);
+        vertical-align: top;
+    }
+
+    th {
+        background-color: var(--colour-butter);
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+    }
+
+    tr:hover td {
+       background-color: rgba(247, 198, 217, 0.25);
+    }
+
+    /* Contact page: two bakery locations side by side on desktop */
+    .locations {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .location section {
+        flex: 1 1 300px;
+    }
+
+    /* Forms (enquiry.html + contact.html) */
+    fieldset {
+        border: 2px solid var(--colour-butter);
+        border-radius: var(--radius);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    legend {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        padding: 0 0.5rem;
+    }
+
+    .form-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 1.5rem;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 calc(50% - 0.75rem); /* two fields per row on desktop */
+        margin-bottom: 1rem;
+    }
+
+    /* Fields that should take the full width even on desktop (textarea, file upload) */
+    .field-full {
+        flex-basis: 100%;
+    }
+
+    .field label {
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+        font-family: inherit;
+        font-size: 1rem;
+        padding: 0.6rem 0.75rem;
+        border: 1px solid var(--colour-brown-light);
+        border-radius: 8px;
+        background-color: var(--colour-cream);
+    }
+
+    .field textarea {
+        resize: vertical; /* allow vertical resizing only */
+        min-height: 8em;
+    }
+
+    /* 8. Footer
+   A simple footer with a background colour and some padding. */
+    footer {
+     background-color: var(--colour-chocolate);
+     color: var(--colour-cream);
+     padding: 2rem;
+     text-align: center;
+    }
+
+    footer p {
+        max-width: none;
+        margin-bottom: 1rem;
+    }
+
+    footer nav ul {
+        justify-content: center;
+    }
+
+    footer nav a {
+        color: var(--colour-cream);
+    }
+
+    footer nav a:hover,
+    footer nav a:focus {
+        color: var(--colour-pink);
+    }
+
+    /* 9. RESPONSIVE DESIGN
+   Breakpoints: desktop (default styles above), tablet (<= 900px),
+   mobile (<= 600px). Relative units (rem/em/%) throughout mean most
+   content already resizes itself; the media queries below mainly
+   collapse multi-column layouts down to a single column. */
+    
+
+   /* ---- Tablet ---- */
+    @media (max-width: 900px) {
+        main {
+            padding: 1.5rem;
+        }
+
+        h1 {font-size: 2.4rem;}
+        h2 {font-size: 1.8rem;}
+        h3 {font-size: 1.4rem;}
+
+        .split {
+            flex-direction: column;
+        }
+
+        .split-media,
+        .split-content {
+            flex-basis: auto;
+        }
+
+        .location {
+            flex-direction: column;
+        }
+
+        .location section {
+            flex-basis: auto;
+        }
+
+        .field {
+            flex-basis: 100%;
+        }
+    }
+    
+    /* ---- Mobile ---- */
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+        }
+
+        nav ul {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5em 0;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        main section {
+            padding: 1.25rem;
+        }
+
+        h1 {font-size: 2rem;}
+        h2 {font-size: 1.5rem;}
+
+        caption { font-size: 1.2rem; }
+
+        th, td {
+            padding: 0.6rem;
+            font-size: o.9rem;
+        }
+       
+        .btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
