@@ -51,3 +51,32 @@ Practice. 7th ed. Harlow: Pearson Education.
 - Garrett, J.J., 2011. The Elements of User Experience: User-Centered Design for the Web and 
 Beyond. 2nd ed. Berkeley, CA: New Riders.
 - Robbins, J.N., 2012. Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics. 4th ed. Sebastopol, CA: O'Reilly Media.
+
+
+---
+# README Update - Part 2
+
+## Project Part 2 - CSS Styling for Desktop Soluction and Responsive Design
+### Overview of Part 2
+
+In Part 1 we built five plain HTML pages for "The Usual" bakery website (index.html, about.html,
+catalog.html, eququiry.html and contact.html). These pages had no styling or JavaScript.
+
+In Part 2 we added a separate CSS file (css/style.css) and linked it to every page. This gave the
+website a full desktop design with colours, fonts, layout and hover effect. We then made the
+design work well on tablets and mobile phones.
+
+## What was implemeneted
+
+### External Stylesheet
+- We created one CSS file called style.css and linked it from the head of all five HTML pages.
+- The same relative path (css/style.css) is used on every page so the styling stays consistent.
+
+### Base Style - Design Tokens
+- We set the website colorsonce using CSS custom properties on the :root selector (soft
+  buttercream yellow, pastel pink, dark chocolate brown and a cream background). These
+  match the colors planned in Part 1.
+- We added a simple CSS reset so margins, padding and box-sizing work the same in all
+  browsers.
+- We set a default font family, base font size and line-height on the body element.
+
