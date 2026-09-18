@@ -80,3 +80,58 @@ design work well on tablets and mobile phones.
   browsers.
 - We set a default font family, base font size and line-height on the body element.
 
+### Fonts & Styling
+- Selected Nunito for easy-to-read body text and Dancing Script for decoative heading that mimic
+  cake icing.
+- Used relative font sizes (rem) so text scales correctly based on user settings.
+- Styled buttons with rounded pill shapes, show shadows, and visual feedback when hovered,
+  focused, or clicked.
+
+### Layouts & Structure
+- Built multi-column layouts (headers, text-and-image split sections, forms, location
+  details) using Flexbox.
+- Used a reusable .split class for the home hero and "About Us" sections to avoid
+  writing duplicate CSS.
+- Styled product tables with row hover hightlights
+- Designed two-column form structures that automatically collapse to s single column
+  on mobile devices
+
+### Responsive Design
+<img width="1907" height="935" alt="Screenshot 2026-09-18 160355" src="https://github.com/user-attachments/assets/79a2518e-debf-4c71-9b28-1d21d3babe2b" />
+
+<img width="1916" height="917" alt="Screenshot 2026-09-18 160511" src="https://github.com/user-attachments/assets/071c7cd1-decf-41f6-a59e-40211126b2aa" />
+
+### Changelog
+| Date          | Change |
+|---------------|--------|
+| 10 Sep 2026   | Added external stylesheet (`css/style.css`) and linked it from all five HTML pages. |
+| 11 Sep 2026   | Defined the site’s colour palette and typography as reusable CSS custom properties, and applied a CSS reset for consistent cross-browser rendering. |
+| 13 Sep 2026   | Restructured the homepage hero and About Us history sections into a two-column media/content layout using Flexbox. |
+| 14 Sep 2026   | Wrapped the catalog and product tables in a scrollable container for small screens; removed the border/cellpadding/cellspacing attributes used in Part 1 now that CSS controls that styling. |
+| 15 Sep 2026   | Rebuilt the Enquiry and Contact forms with labelled field groups (`.field` / `.form-grid`) for a responsive two-column layout on desktop. |
+| 16 Sep 2026   | Added hover, focus and active states for navigation links and buttons. |
+| 16 Sep 2026   | Implemented two responsive breakpoints (900px tablet, 600px mobile) and fixed a flex-basis bug that was adding unwanted blank space when layouts stacked on mobile. |
+| 16 Sep 2026   | Added a working responsive image example (`srcset`/`sizes`) on the homepage hero photo. |
+| 17 Sep 2026   | Redesigned the site header to a simplified single-row layout (logo left, navigation right, thin divider) based on a supplied visual reference; removed the tagline text from the header row. |
+| 18 Sep 2026   | Redesigned the site Enquiry page and redesigned the Contact Us page. |
+
+### References
+Font Awesome (2024) Font Awesome 6 Free. Available at: https://fontawesome.com (Accessed: 17 September 2026).
+Google Fonts (n.d.) *Nunito*. Available at: https://fonts.google.com/specimen/Nunito (Accessed: 11 September 2026).
+
+Google Fonts (n.d.) *Dancing Script*. Available at: https://fonts.google.com/specimen/Dancing+Script (Accessed: 11 September 2026).
+
+Mozilla Developer Network (2024) Using CSS custom properties (variables). Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties (Accessed: 14 September 2026).
+
+Mozilla Developer Network (2024) Responsive images. Available at: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images (Accessed: 14 September 2026).
+
+Mozilla Contributors (n.d.) *CSS Flexible Box Layout*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout (Accessed: 16 September 2026).
+
+Mozilla Contributors (n.d.) *Using CSS Custom Properties (Variables)*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties (Accessed: 16 September 2026).
+
+Mozilla Contributors (n.d.) *Media Queries*. Available at: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Media_queries (Accessed: 16 September 2026).
+
+Mozilla Contributors (n.d.) *Responsive Images*. Available at: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images (Accessed: 16 September 2026).
+
+
+W3Schools (2024) CSS Media Queries. Available at: https://www.w3schools.com/css/css3_mediaqueries.asp (Accessed: 15 September 2026).
