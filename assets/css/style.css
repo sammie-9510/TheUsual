@@ -288,6 +288,35 @@ ul {
     overflow-x: auto; /* allows horizontal scrolling on small screens */
    }
 
+   
+    /* Embedded maps (Contact page) - keeps a Google Maps <iframe> (or any
+   embed) scaling proportionally at any screen width instead of
+   overflowing the page or getting squashed. The percentage below sets
+   a 16:9 ratio; using padding instead of the newer aspect-ratio
+   property here since it works in every browser, old or new. */
+.map-embed {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+ 
+.map-embed:last-child {
+    margin-bottom: 0;
+}
+ 
+.map-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
     table {
      width: 100%;
      border-collapse: collapse;
@@ -318,6 +347,16 @@ ul {
        background-color: rgba(247, 198, 217, 0.25);
     }
 
+    .locations {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .loctions section {
+        flex: 1 1 300px;
+    }
+
     #catalog-preview img {
         width: 100%;
         max-width: 250px;
@@ -327,7 +366,8 @@ ul {
         transition: transform 0.3s ease,
     }
 
-    /* Contact page: two bakery locations side by side on desktop */
+
+    /* Contact page: two bakery locations side by side on desktop *
     .locations {
         display: flex;
         flex-wrap: wrap;
@@ -336,7 +376,7 @@ ul {
 
     .location section {
         flex: 1 1 300px;
-    }
+    } */
 
     /* Forms (enquiry.html + contact.html) */
     fieldset {
@@ -564,11 +604,11 @@ ul {
             flex-basis: auto;
         }
 
-        .location {
+        .locations {
             flex-direction: column;
         }
 
-        .location section {
+        .locations section {
             flex-basis: auto;
         }
 
@@ -628,3 +668,5 @@ ul {
             text-align: center;
         }
     }
+        
+  
