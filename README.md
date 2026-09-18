@@ -96,6 +96,17 @@ design work well on tablets and mobile phones.
 - Designed two-column form structures that automatically collapse to s single column
   on mobile devices
 
+### Updated File Structure
+TheUsualBakery/
+├── index.html
+├── about.html
+├── products.html
+├── enquiry.html
+├── contact.html
+├── css/
+│   └── style.css          (new in Part 2)
+└── images/
+
 ### Responsive Design
 <img width="1907" height="935" alt="Screenshot 2026-09-18 160355" src="https://github.com/user-attachments/assets/79a2518e-debf-4c71-9b28-1d21d3babe2b" />
 
@@ -117,6 +128,7 @@ design work well on tablets and mobile phones.
 
 ### References
 Font Awesome (2024) Font Awesome 6 Free. Available at: https://fontawesome.com (Accessed: 17 September 2026).
+
 Google Fonts (n.d.) *Nunito*. Available at: https://fonts.google.com/specimen/Nunito (Accessed: 11 September 2026).
 
 Google Fonts (n.d.) *Dancing Script*. Available at: https://fonts.google.com/specimen/Dancing+Script (Accessed: 11 September 2026).
