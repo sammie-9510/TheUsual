@@ -235,3 +235,14 @@ Keyword research: I picked local search terms that show people are ready to buy.
 how often people search for them. Once the site is live, check this with Google Keyword Planner or 
 Search Console.
 
+| Keyword / phrase | Page |	Where it is used |
+|------------------|------|------------------|
+custom cakes Gqeberha / Port Elizabeth | Home | Title, meta description, h1, hero text |
+custom birthday cakes Gqeberha | Products | Meta description, category names, product text |
+wedding cakes Gqeberha | Products | Category names, product descriptions, image alt text |
+cupcakes Gqeberha | Products |Product names and descriptions |
+corporate pastry platters | Products | Category names, product descriptions |
+cake quote Gqeberha | Enquiry | Title, h1, meta description |
+family bakery Gqeberha / bakery Summerstrand |About, Contact | Titles, headings, address and schema data |
+
+
