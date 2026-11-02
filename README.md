@@ -273,3 +273,17 @@ Profile for each branch, using the same name, address and phone number as the we
 bakery in Gqeberha business directories and wedding-supplier lists. Ask local suppliers, schools 
 and event venues to link to the site. Post new cake photos on Facebook and Instagram with a link 
 back to the catalog.
+
+### 5 Extra SEO items
+- robots.txt and sitemap.xml. robots.txt lets all crawlers in and points to the sitemap. 
+sitemap.xml lists all five pages with their last-changed dates and priorities.
+- Page speed. Google Fonts now load with a <link> and preconnect instead of a CSS @import. All 
+scripts use defer. Images below the fold use loading="lazy". The hero image is marked high 
+priority. Leaflet only loads on the Contact page. The CSS and JS are small plain files with no 
+frameworks.
+- Security. Subresource Integrity (SRI) hashes on the Leaflet files mean a changed CDN file will 
+not run. External links use rel="noopener noreferrer". There are no inline scripts or event 
+handlers. All dynamic text goes in with textContent. A hidden honeypot field catches spam bots. 
+Every form checks its input. A _headers file is also included (written for Netlify). It sets 
+Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-
+Policy and HSTS. GitHub Pages ignores this file, so these headers are not active on the live site.
