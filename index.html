@@ -1,120 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: unique title (under about 60 characters) and description (under about 160) for every page -->
+    <title>Custom Cakes &amp; Cupcakes in Gqeberha | The Usual Bakery</title>
+    <meta name="description" content="Family-owned Gqeberha (Port Elizabeth) bakery with 70+ years of baking. Custom birthday and wedding cakes, cupcakes and corporate platters. Get a quote today.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sammie-9510.github.io/TheUsual/">
+    <meta name="theme-color" content="#f5e1a4">
+
+    <!-- Social media previews (Open Graph + Twitter) - shown when a page is shared on Facebook, WhatsApp, X etc. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Usual Bakery">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Custom Cakes &amp; Cupcakes in Gqeberha | The Usual Bakery">
+    <meta property="og:description" content="Family-owned Gqeberha (Port Elizabeth) bakery with 70+ years of baking. Custom birthday and wedding cakes, cupcakes and corporate platters. Get a quote today.">
+    <meta property="og:url" content="https://sammie-9510.github.io/TheUsual/">
+    <meta property="og:image" content="https://sammie-9510.github.io/TheUsual/assets/images/front cake.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="./assets/images/Logo.png" type="image/svg+xml">
+
+    <!-- Page speed: connect to the font host early, then load the fonts without blocking the page -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Nunito:wght@400;600;700&amp;display=swap">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" type="image/jpeg" href="./assets/images/Logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>THE USUAL BAKERY - HOME</title>
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "The Usual Bakery - Main Bakery",
+      "url": "https://sammie-9510.github.io/TheUsual/",
+      "image": "https://sammie-9510.github.io/TheUsual/assets/images/front cake.jpg",
+      "telephone": "+27224567890",
+      "email": "info@theusualbakery.com",
+      "priceRange": "R240 - R3500",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12 Baker Street, Summerstrand",
+        "addressLocality": "Gqeberha",
+        "postalCode": "6001",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.99177,
+        "longitude": 25.65720
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "13:00"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
-    <!--header: appears at the top of every page and holds the site identity and navigation -->
-    <header>
-        <div class="logo">
-            <img src="./assets/images/Logo.png" alt="The Usual Bakery logo" width="100" height="100">
-        </div>
-        <h1>THE USUAL BAKERY</h1>
-        <p>Family baking, three generations strong</p>
 
-        <!--main navigation menu - identical on every page so users can move around site easily-->
-        <nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header: logo + main navigation, identical on every page -->
+    <header>
+        <a href="./index.html" class="logo">The Usual</a>
+        <nav aria-label="Main">
             <ul>
-                <li><a href="./index.html">HOME</a></li>
-                <li><a href="./pages/catalog.html">CATALOG</a></li>
+                <li><a href="./index.html" aria-current="page">HOME</a></li>
                 <li><a href="./pages/about-us.html">ABOUT US</a></li>
+                <li><a href="./pages/catalog.html">CATALOG</a></li>
                 <li><a href="./pages/enquiry.html">ENQUIRY</a></li>
                 <li><a href="./pages/contact.html">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <div class="hero-container">
-                <!--left side:search bar-->
-                <div class="hero-image">
-                    <img src="./assets/images/4925880839209203.jpg" alt="A custom decorated cake made by The Usual Bakery" width="600" height="600">
-                </div>
+    <main id="main-content">
 
-                <!--right side: hero image-->
-                <div class="hero-text">
-                    <h1>Cakes and Pastries Made <br> With 70 Years of Love</h1>
-                    <p>
-                        The Usual is a family-owned bakery built on generations of recipes, warmth
-                        and community. From birthdays to weddings to corporate events, we bake every
-                        order like it is for our own family.
-                    </p>
-                    <a href="./pages/enquiry.html" class="btn">Make an Enquiry</a>
-                    </div>
-                </div>
-                </section>
+        <!-- Hero: the only h1 on the page, written with the main keywords (custom cakes, Gqeberha) -->
+        <section id="hero" class="split">
+            <div class="split-media">
+                <!-- srcset lets the browser pick a smaller file on small screens (add a hero-cake-small.jpg, about 600px wide) -->
+                <img
+                    src="./assets/images/front cake.jpg"
+                    srcset="./assets/images/front cake-small.jpg 600w, ./assets/images/front cake.jpg 1200w"
+                    sizes="(max-width: 600px) 100vw, 50vw"
+                    width="600" height="600" fetchpriority="high"
+                    alt="A custom decorated cake made by The Usual Bakery">
+            </div>
+            <div class="split-content">
+                <h1>Cakes and Pastries Made With 70 Years of Love</h1>
+                <p>
+                    The Usual is a family-owned bakery built on generations of recipes, warmth
+                    and community. From birthdays to weddings to corporate events, we bake every
+                    order like it is for our own family.
+                    <a href="./pages/about-us.html">Read our story</a>.
+                </p>
+                <a href="./pages/enquiry.html" class="btn">Request a Quote</a>
+            </div>
+        </section>
 
-
-
-
-
-
-            <!--<img src="./assets/images/4925880839209203.jpg" alt="A custom decorated cake made by The Usual Bakery" width="600" height="600">
-            <h2>Cakes and Pastries Made With 70 Years of Love</h2>
-            <p>
-                The Usual is a family-owned bakery built on geneations of recipes, warmth
-                and communtiy. From birthdays to weddings to corporate events, we bake every
-                order like it is for our own family.
-            </p>
-            <a href="./pages/enquiry.html" class="btn-quote">Make an Enquiry</a>
-        </section> -->
-
+        <!-- Catalog preview: each label links into the filtered catalog (internal linking) -->
         <section id="catalog-preview">
             <h2>What We Bake</h2>
-            <table border="0" cellpadding="15" cellspacing="0" style="width: 100%; text-align: center;">
-                <caption>Our Catalogue Preview</caption>
-                <tr>
-                    <td>
-                        <h3>Birthday Cakes and Cupcakes</h3>
-                        <img src="./assets/images/492649955065050.jpg" alt="A colorful custom birthday cake" width="250" height="300" style="object-fit: cover;" border-radius: 8px><br>
-                    </td>
-                    <td>
-                        <h3>Wedding and Anniversary Cakes</h3>
-                        <img src="./assets/images/30 Wedding Cake Ideas For Any Wedding Theme I Take….jpg" alt="A three-tiered wedding cake with floral decorations" width="250" height="300" style="object-fit: cover;" border-radius: 8px><br>
-                    </td>
-                    <td>
-                        <h3>Milestone Celebration Treats</h3>
-                        <img src="./assets/images/8866530512385398.jpg" alt="A custom cake for a milestone birthday celebration" width="250" height="250" style="object-fit: cover;" border-radius: 8px><br>
-                    </td>
-                </tr>
+            <div class="table-wrap">
+                <table>
+                    <caption class="visually-hidden">Our four main product categories</caption>
+                    <tr>
+                        <td>
+                            <a href="./pages/catalog.html?cat=birthday">
+                                <img src="./assets/images/cake and cupcake.jpg" alt="Decorated birthday cake and cupcakes" width="150" height="113" loading="lazy"><br>
+                                Birthday Cakes &amp; Cupcakes
+                            </a>
+                        </td>
+                        <td>
+                            <a href="./pages/catalog.html?cat=wedding">
+                                <img src="./assets/images/30 Wedding Cake Ideas For Any Wedding Theme I Take….jpg" alt="Tiered wedding cake" width="150" height="113" loading="lazy"><br>
+                                Wedding &amp; Anniversary Cakes
+                            </a>
+                        </td>
+                        <td>
+                            <a href="./pages/catalog.html?cat=milestone">
+                                <img src="./assets/images/cake 4.jpg" alt="Cake made for a milestone celebration" width="150" height="113" loading="lazy"><br>
+                                Milestone Celebrations
+                            </a>
+                        </td>
+                        <td>
+                            <a href="./pages/catalog.html?cat=corporate">
+                                <img src="./assets/images/corporate cake.jpg" alt="Pastry platter for a corporate event" width="150" height="113" loading="lazy"><br>
+                                Corporate Event Platters
+                            </a>
+                        </td>
+                    </tr>
                 </table>
-            <p><a href="./pages/catalog.html" class="btn">View Our Full Catalog</a></p>
+            </div>
+            <p>
+                <a href="./pages/catalog.html" class="btn">View the full catalog</a>
+            </p>
+        </section>
+
+        <!-- Photo gallery: every photo opens in a lightbox (js/gallery.js) -->
+        <section id="gallery">
+            <h2>Recent Creations</h2>
+            <p>Tap or click any photo to see it larger.</p>
+            <ul class="gallery">
+                <li><a href="./assets/images/birthday cake.jpg" data-caption="A custom themed birthday cake"><img src="./assets/images/birthday cake.jpg" alt="Custom themed birthday cake" width="400" height="300" loading="lazy"></a></li>
+                <li><a href="./assets/images/70+ Winter Wedding Cake Ideas (In 20 Categories).jpg" data-caption="A tiered wedding cake with floral decoration"><img src="./assets/images/70+ Winter Wedding Cake Ideas (In 20 Categories).jpg" alt="Tiered wedding cake with flowers" width="400" height="300" loading="lazy"></a></li>
+                <li><a href="./assets/images/Strawberry Cupcake Tower.jpg" data-caption="A cupcake tower for a dessert table"><img src="./assets/images/Strawberry Cupcake Tower.jpg" alt="Tiered cupcake tower" width="400" height="300" loading="lazy"></a></li>
+                <li><a href="./assets/images/Graduation cake.jpg" data-caption="A graduation celebration cake"><img src="./assets/images/Graduation cake.jpg" alt="Graduation cake" width="400" height="300" loading="lazy"></a></li>
+                <li><a href="./assets/images/anniversary cake ideas.jpg" data-caption="An anniversary cake styled like the original wedding cake"><img src="./assets/images/anniversary cake ideas.jpg" alt="Anniversary cake" width="400" height="300" loading="lazy"></a></li>
+                <li><a href="./assets/images/corporate cake 2.jpg" data-caption="A mixed pastry platter for an office event"><img src="./assets/images/corporate cake 2.jpg" alt="Mixed pastry platter" width="400" height="300" loading="lazy"></a></li>
+            </ul>
         </section>
 
         <section id="cta">
             <h2>Planning an Event?</h2>
-            <p> Tells us the date, the occasion, and your vision, and we will help bring it
-                to life with custom orders.
+            <p>
+                Tell us the date, the occasion and your vision. Our quote form gives you an instant
+                estimate and checks your date. Have questions first? Read our
+                <a href="./pages/enquiry.html#faq">ordering FAQ</a> or <a href="./pages/contact.html">visit us in Gqeberha</a>.
             </p>
             <a href="./pages/enquiry.html" class="btn">Make an Enquiry</a>
         </section>
+
     </main>
 
+    <!-- Lightbox used by the gallery -->
+    <dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
+        <button type="button" id="lightbox-close" class="lightbox-btn" aria-label="Close photo viewer">&times;</button>
+        <button type="button" id="lightbox-prev" class="lightbox-btn" aria-label="Previous photo">&lsaquo;</button>
+        <figure>
+            <img id="lightbox-image" src="" alt="">
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+        <button type="button" id="lightbox-next" class="lightbox-btn" aria-label="Next photo">&rsaquo;</button>
+        <p id="lightbox-count" class="lightbox-count" aria-live="polite"></p>
+    </dialog>
+
+    <!-- Footer: contact summary, social links and a second set of internal links -->
     <footer>
-        <p>&copy; 2026 The Usual Bakery</p>
+        <p>&copy; 2026 The Usual Bakery. All rights reserved.</p>
         <p class=" tagline">Your Local Bakery for Custom Cakes and Treats</p>
         <p class="footer-email">Email: <a href="mailto:info@theusualbakery.com">info@theusualbakery.com</a></p>
-        <nav>
+        <div class="footer-social">Follow us:
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class=" fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class=" fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class=" fa-brands fa-tiktok"></i></a>
+        </div>
+        <nav aria-label="Footer">
             <ul>
+                <li><a href="./pages/index.html" aria-current="page">HOME</a></li>
+                <li><a href="./pages/about.html">ABOUT US</a></li>
                 <li><a href="./pages/catalog.html">CATALOG</a></li>
-                <li><a href="./pages/about-us.html">ABOUT US</a></li>
                 <li><a href="./pages/enquiry.html">ENQUIRY</a></li>
                 <li><a href="./pages/contact.html">CONTACT</a></li>
             </ul>
         </nav>
-        <h3 class="follow">Follow Us</h3>
-        <!-- Social media links -->
-  <div class="social-links">
-    <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class=" fa-brands fa-facebook"></i></a>
-    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class=" fa-brands fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class=" fa-brands fa-tiktok"></i></a>
-  </div>
     </footer>
+    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/gallery.js" defer></script>
 </body>
 </html>

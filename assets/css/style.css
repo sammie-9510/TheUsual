@@ -1,8 +1,9 @@
-/*THE USUAL BAKERY - STYLESHEET (Part 2)
+/* =========================================================================
+   THE USUAL BAKERY - STYLESHEET (Parts 2 and 3)
    WEDE5020 Website Project
- 
+
    Contents:
-   1. Google Fonts import
+   1. Fonts (loaded from each page's <head>)
    2. CSS custom properties (design tokens)
    3. CSS reset
    4. Base / typography styles
@@ -10,305 +11,1115 @@
    6. Layout helpers (split, cards, buttons)
    7. Page-specific sections (hero, catalog, tables, locations, forms)
    8. Footer
-   9. Responsive design (tablet + mobile breakpoints) */
+   9. Responsive design (tablet + mobile breakpoints)
+   10. Part 3 additions: accessibility, animation, catalog, modal, gallery,
+       accordion, form feedback, map (kept at the end so they can build on
+       everything above)
+   ========================================================================= */
 
-   /*  1. Fonts
-   Sans-serif for readable body text, a script font for headings to
-   mimic icing on a cake, as described in the Part 1 proposal. */
+
+/* -------------------------------------------------------------------------
+   1. Fonts
+   Nunito (body) and Dancing Script (headings) are loaded with a <link> tag
+   in each page's <head> - that loads faster than a CSS @import.
+   ------------------------------------------------------------------------- */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Dancing+Script:wght@600;700&display=swap');
-
-/* 2. Design tokens - the whole colour scheme and a few shared values
+/* -------------------------------------------------------------------------
+   2. Design tokens - the whole colour scheme and a few shared values
    are defined once here. Every other rule references these variables,
    which is what lets the "cascading" nature of CSS do the heavy lifting:
-   change a colour once, and it updates everywhere it's used. */
-
+   change a colour once, and it updates everywhere it's used.
+   ------------------------------------------------------------------------- */
 :root {
-  /* Colours */
-  --colour-cream: #fffbf2; /* Background colour for the site */
-  --colour-butter: #f5e1a4;  /*soft buttercream yellow*/
-  --colour-pink: #f7c6d9;  /* soft pink icing */
-    --colour-chocolate: #3b2314;  /* dark chocolate - main text color */
-    --colour-brown-light: #6b4226;
-    --colour-white: #ffffff;
+    --clr-cream: #fffbf2;      /* page background - lets photos stand out */
+    --clr-butter: #f5e1a4;     /* soft buttercream yellow */
+    --clr-pink: #f7c6d9;       /* pastel pink */
+    --clr-brown: #3b2314;      /* dark chocolate brown - main text colour */
+    --clr-brown-light: #6b4226;
+    --clr-white: #ffffff;
 
-  /* Typography */
-  --font-body: 'Nunito', sans-serif;
-  --font-heading: 'Dancing Script', cursive;
+    --font-body: 'Nunito', sans-serif;
+    --font-heading: 'Dancing Script', cursive;
 
-
-  --radius: 12px;
-  --shadow: 0 4px 10px rgba(59, 35, 20, 0.15);
+    --radius: 12px;
+    --shadow: 0 4px 10px rgba(59, 35, 20, 0.15);
 }
 
-/* 3. CSS Reset
-   A simple reset to remove default browser styles and ensure consistency
-   across different browsers. */
 
+/* -------------------------------------------------------------------------
+   3. Reset - removes inconsistent default spacing/behaviour across browsers
+   ------------------------------------------------------------------------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-img{
-  max-width: 100%; /* Ensure images are responsive */
-  height: auto;
-  display: block;
+img {
+    max-width: 100%;   /* relative unit (%) keeps images responsive by default */
+    height: auto;
+    display: block;
 }
 
 a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit color from parent */
+    text-decoration: none;
+    color: inherit;
 }
 
 ul {
-  list-style: none; /* Remove default list styles */
+    list-style: none;
 }
 
-/* 4. Base / Typography Styles
-   Define base styles for body text, headings, and other typographic elements. */
-   body {
-  font-family: var(--font-body);
-  background-color: var(--colour-cream);
-    color: var(--colour-chocolate);
+
+/* -------------------------------------------------------------------------
+   4. Base + typography
+   ------------------------------------------------------------------------- */
+body {
+    font-family: var(--font-body);
+    background-color: var(--clr-cream);
+    color: var(--clr-brown);
     font-size: 1rem;
     line-height: 1.6;
-   }
+}
 
-   h1, h2, h3 {
+h1, h2, h3 {
     font-family: var(--font-heading);
-    color: var(--colour-chocolate);
+    color: var(--clr-brown);
     line-height: 1.2;
     margin-bottom: 0.6em;
-   }
+}
 
-   h1 {
-    font-size: 3rem;
-   }
-   h2 {
-    font-size: 2.2rem;
-   }
-   h3 {
-    font-size: 1.7rem;
-   }
+h1 { font-size: 3rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.7rem; }
 
-   p {
-    margin-bottom: 1em;
-    max-width: 65ch; /*keeps paragraphs a comfortable reading width */
-   }
+p {
+    margin-bottom: 1rem;
+    max-width: 65ch; /* keeps paragraphs a comfortable reading width */
+}
 
-   address {
-    font-style: normal; /* Override default italic style for address */
-    margin-bottom: 1em;
-   }
+address {
+    font-style: normal;
+    margin-bottom: 1rem;
+}
 
-   /*  5. Header & navigation
+
+/* -------------------------------------------------------------------------
+   5. Header & navigation
    Sticky at the top so the enquiry link is always reachable, as
-   specified in the proposal's User Experience notes. */
-
-   header {
+   specified in the proposal's User Experience notes.
+   ------------------------------------------------------------------------- */
+header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--colour-cream);
-    border-bottom: 1px solid var(--colour-butter);
+    background-color: var(--clr-white);
+    border-bottom: 1px solid var(--clr-butter);
     padding: 1.25rem 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem 2rem;
-   }
+}
 
-   header h1 {
+.logo {
+    font-family: var(--font-heading);
     font-size: 2rem;
-    margin: 0;
-   }
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--clr-brown);
+}
 
-   nav ul {
+nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.5em 2.5em;
-   }
+    gap: 0.5em 2.25em;
+}
 
-   nav a {
+nav a {
     font-weight: 600;
     font-size: 0.95rem;
     padding: 0.3em 0.1em;
     border-bottom: 3px solid transparent;
     transition: border-color 0.2s ease, color 0.2s ease;
-   }
-    /* interactive states - required by the brief : hover, focus, active */
-    nav a:hover,
-    nav a:focus {
-        border-color: var(--colour-brown);
-        color: var(--colour-brown-light);
-        outline: none; /* Remove default focus outline */
-    }
+}
 
-    nav a:active {
-        color: var(--colour-pink);
-    }
+/* Interactive states - required by the brief: hover, focus and active */
+nav a:hover,
+nav a:focus {
+    border-color: var(--clr-brown);
+    color: var(--clr-brown-light);
+    outline: none;
+}
 
-    footer nav a{
-        color: var(--colour-chocolate);
-    }
+nav a:active {
+    color: var(--clr-pink);
+}
 
-    /* 6. Layout helpers */
+footer nav a {
+    color: var(--clr-brown);
+}
 
-    main {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 2rem;
-    }
 
-    /* Generic "card" look applied to every section inside main. This is a
+/* -------------------------------------------------------------------------
+   6. Layout helpers
+   ------------------------------------------------------------------------- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Generic "card" look applied to every section inside main. This is a
    deliberately broad, low-specificity selector - most sections just
    inherit this look, and only a couple of sections need an override
    rule further down (the cascade doing the work instead of repeating
    the same declarations on lots of individual selectors). */
-   main section {
-    background-color: var(--colour-white);
+main section {
+    background-color: var(--clr-white);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 2rem;
     margin-bottom: 2.5rem;
-   }
+}
 
-   /* Reusable two-column media/content split, used for the homepage hero
+/* Reusable two-column media/content split, used for the homepage hero
    and the About Us history section. Flexbox rather than Grid here so
    the layout degrades gracefully on any browser. */
-   .split {
+.split {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     align-items: center;
-   }
+}
 
-   .split-media,
-   .split-content {
-    flex: 1 1 320px; /* each side shares the space evenly, wraps below 320px + gap */
-    min-width: 0; /* prevents flex items from overflowing their container */
-   }
+.split-media,
+.split-content {
+    flex: 1 1 320px; /* each side shares the space evenly, wraps below 320px+gap */
+    min-width: 0;
+}
 
-   .split-media img {
+.split-media img {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-   }
+}
 
-   /* Buttons / call-to-action links */
-    .btn {
-     display: inline-block;
-     background-color: var(--colour-pink);
-     color: var(--colour-chocolate);
-     font-weight: 700;
-     padding: 0.75em 1.75em;
-     border-radius: 999px; /* pill shape */
-     box-shadow: var(--shadow);
-     border: none;
-     font-family: inherit;
-     font-size: 1rem;
-     cursor: pointer;
-     transition: background-color 0.2s ease, transform 0.2s ease;
-    }
+/* Buttons / call-to-action links */
+.btn {
+    display: inline-block;
+    background-color: var(--clr-pink);
+    color: var(--clr-brown);
+    font-weight: 700;
+    padding: 0.75em 1.75em;
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
 
-    .btn:hover,
-    .btn:focus {
-        background-color: var(--colour-butter);
-        transform: translateY(-2px);
-        outline: none; /* Remove default focus outline */
-    }
+.btn:hover,
+.btn:focus {
+    background-color: var(--clr-butter);
+    transform: translateY(-2px);
+    outline: none;
+}
 
-    .btn:active {
-        transform: translateY(0);
-    }
+.btn:active {
+    transform: translateY(0);
+}
 
-    /* 7. Page-specific sections */
 
-    /* Hero (index.html) - uses .split, but sits on the cream background
+/* -------------------------------------------------------------------------
+   7. Page-specific sections
+   ------------------------------------------------------------------------- */
+
+/* Hero (index.html) - uses .split, but sits on the cream background
    rather than a white card, so it overrides the generic "main section"
    rule above. This is the cascade in action: a later, more specific
    rule (#hero) wins over the earlier, more general one (main section). */
-   #hero { 
-    background: var(--colour-cream);
+#hero {
+    background: none;
     box-shadow: none;
-    padding: 60px 5%;
-   }
+    padding: 0;
+}
 
-   .hero-container {
-    max-width: 600px;
-    margin: 0 auto;
+/* Catalog preview table (index.html) and category tables (products.html) */
+.table-wrap {
+    overflow-x: auto; /* lets wide tables scroll instead of squashing on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--clr-butter);
+    vertical-align: top;
+}
+
+th {
+    background-color: var(--clr-butter);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+}
+
+tr:hover td {
+    background-color: rgba(247, 198, 217, 0.25);
+}
+
+/* Contact page: two bakery locations side by side on desktop */
+.locations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.locations section {
+    flex: 1 1 300px;
+}
+
+/* Forms (enquiry.html + contact.html) */
+fieldset {
+    min-width: 0; /* stops a form field's natural width pushing the page wider than a phone screen */
+    border: 2px solid var(--clr-butter);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    padding: 0 0.5em;
+}
+
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(50% - 0.75rem); /* two fields per row on desktop */
+    margin-bottom: 1rem;
+}
+
+/* Fields that should take the full width even on desktop (textarea, file upload) */
+.field.full {
+    flex-basis: 100%;
+}
+
+.field label {
+    font-weight: 600;
+    margin-bottom: 0.35em;
+}
+
+.field input,
+.field select,
+.field textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.6em 0.75em;
+    border: 1px solid var(--clr-brown-light);
+    border-radius: 8px;
+    background-color: var(--clr-cream);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    outline: 2px solid var(--clr-pink);
+    border-color: var(--clr-pink);
+}
+
+.field textarea {
+    resize: vertical;
+    min-height: 8em;
+}
+
+
+/* -------------------------------------------------------------------------
+   8. Footer
+   ------------------------------------------------------------------------- */
+footer {
+    background-color: var(--clr-brown);
+    color: var(--clr-cream);
+    padding: 2rem;
+    text-align: center;
+}
+
+footer p {
+    max-width: none;
+    margin-bottom: 1rem;
+}
+
+footer nav ul {
+    justify-content: center;
+}
+
+footer nav a {
+    color: var(--clr-cream);
+}
+
+footer nav a:hover,
+footer nav a:focus {
+    color: var(--clr-pink);
+}
+ .footer-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  justify-content: center; /* or flex-start if you prefer left-aligned */
+}
+
+.footer-social a {
+  color: #333; /* change to match your footer text color */
+  font-size: 24px;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #e67e22; /* bakery-style accent color – change as needed */
+  transform: scale(1.15);
+}
+
+
+
+/* =========================================================================
+   9. RESPONSIVE DESIGN
+   Breakpoints: desktop (default styles above), tablet (<= 900px),
+   mobile (<= 600px). Relative units (rem/em/%) throughout mean most
+   content already resizes itself; the media queries below mainly
+   collapse multi-column layouts down to a single column.
+   ========================================================================= */
+
+/* ---- Tablet ---- */
+@media (max-width: 900px) {
+    main {
+        padding: 1.5rem;
+    }
+
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+
+    .split {
+        flex-direction: column;
+    }
+
+    .split-media,
+    .split-content {
+        flex-basis: auto;
+    }
+
+    .locations {
+        flex-direction: column;
+    }
+
+    .locations section {
+        flex-basis: auto;
+    }
+
+    .field {
+        flex-basis: 100%;
+    }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    main section {
+        padding: 1.25rem;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+
+    caption { font-size: 1.2rem; }
+
+    th, td {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* =========================================================================
+   10. PART 3 ADDITIONS
+   ========================================================================= */
+
+/* ---------- Accessibility helpers ---------- */
+
+/* Hidden on screen but still read out by screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* "Skip to main content" link: only appears when a keyboard user tabs to it */
+.skip-link {
+    position: absolute;
+    top: -4rem;
+    left: 1rem;
+    z-index: 200;
+    background: var(--clr-brown);
+    color: var(--clr-cream);
+    padding: 0.6em 1.2em;
+    border-radius: 0 0 var(--radius) var(--radius);
+    font-weight: 700;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* The page you are on is marked in the menu */
+nav a[aria-current="page"] {
+    border-color: var(--clr-pink);
+}
+
+footer nav a[aria-current="page"] {
+    border-color: var(--clr-pink);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--clr-pink);
+    outline-offset: 3px;
+}
+
+/* Every page now has one real h1 (good for SEO and screen readers) */
+main h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.5em;
+}
+
+body.no-scroll {
+    overflow: hidden; /* stops the page scrolling behind an open pop-up */
+}
+
+/* Text links inside content */
+main p a:not(.btn),
+.note a,
+.sent-fail a {
+    color: var(--clr-brown-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+main p a:not(.btn):hover {
+    color: var(--clr-brown);
+}
+
+/* Catalog preview labels on the home page are links into the filtered catalog */
+td a {
+    display: block;
+    font-weight: 600;
+}
+
+td a:hover,
+td a:focus-visible {
+    text-decoration: underline;
+}
+
+/* ---------- Animation ---------- */
+
+/* Sections fade up as they scroll into view (main.js adds these classes) */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@keyframes pop-in {
+    from { opacity: 0; transform: scale(0.94); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Secondary (outline) button */
+.btn-secondary {
+    background-color: var(--clr-white);
+    box-shadow: inset 0 0 0 2px var(--clr-pink);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background-color: var(--clr-butter);
+}
+
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+/* Back-to-top button (created by main.js) */
+.back-to-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 90;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--clr-brown);
+    color: var(--clr-cream);
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background: var(--clr-brown-light);
+}
+
+/* ---------- Product catalog (products.html) ---------- */
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.controls .field {
+    flex: 1 1 200px;
+    margin-bottom: 0;
+}
+
+.controls .btn {
+    flex: 0 0 auto;
+}
+
+#result-count {
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
+    color: var(--clr-brown-light);
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.catalog-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--clr-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: pop-in 0.35s ease both;
+}
+
+.catalog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(59, 35, 20, 0.22);
+}
+
+.catalog-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--clr-butter); /* shows while the photo loads */
+}
+
+.catalog-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.catalog-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3em;
+}
+
+.catalog-tag {
+    align-self: flex-start;
+    background: var(--clr-butter);
+    border-radius: 999px;
+    padding: 0.15em 0.8em;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.catalog-price {
+    margin-top: auto;
+    font-size: 1.05rem;
+}
+
+.catalog-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.catalog-actions .btn {
+    flex: 1 1 auto;
+    padding: 0.6em 1.1em;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem 1rem;
+    max-width: none;
+}
+
+/* ---------- Pop-ups: product details + photo viewer ---------- */
+
+.modal {
+    margin: auto; /* the CSS reset removes the browser's default centring, so put it back */
+    border: none;
+    border-radius: var(--radius);
+    padding: 0;
+    width: min(760px, 92vw);
+    max-height: 90vh;
+    overflow: auto;
+    background: var(--clr-white);
+    color: var(--clr-brown);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.modal::backdrop,
+.lightbox::backdrop {
+    background: rgba(59, 35, 20, 0.65);
+}
+
+.modal[open] {
+    animation: pop-in 0.25s ease;
+}
+
+.modal-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.modal-inner img {
+    flex: 1 1 280px;
+    min-width: 0;
+    max-height: 460px;
+    object-fit: cover;
+}
+
+.modal-content {
+    flex: 1 1 280px;
+    padding: 2rem;
+}
+
+.modal-close,
+.lightbox-btn {
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    background: var(--clr-butter);
+    color: var(--clr-brown);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+}
+
+.modal-close:hover,
+.lightbox-btn:hover {
+    background: var(--clr-pink);
+    transform: scale(1.08);
+}
+
+.summary-list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.35rem 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.summary-list dt {
+    font-weight: 700;
+}
+
+.summary-list dd {
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Gallery + lightbox ---------- */
+
+.gallery {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.gallery a {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--clr-butter);
+    transition: transform 0.4s ease;
+}
+
+.gallery a:hover img,
+.gallery a:focus-visible img {
+    transform: scale(1.07);
+}
+
+.lightbox {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+    color: var(--clr-cream);
+}
+
+.lightbox[open] {
     display: flex;
     align-items: center;
+    justify-content: center;
+    animation: pop-in 0.25s ease;
+}
+
+.lightbox::backdrop {
+    background: rgba(25, 12, 6, 0.92);
+}
+
+.lightbox figure {
+    margin: 0;
+    max-width: 88vw;
+    text-align: center;
+}
+
+.lightbox img {
+    max-width: 88vw;
+    max-height: 72vh;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox figcaption {
+    margin-top: 0.9rem;
+    font-size: 1.05rem;
+}
+
+.lightbox-btn {
+    z-index: 2;
+}
+
+#lightbox-close { top: 1rem; right: 1rem; }
+#lightbox-prev { left: 1rem; top: 50%; margin-top: -1.3rem; }
+#lightbox-next { right: 1rem; top: 50%; margin-top: -1.3rem; }
+
+.lightbox-count {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    max-width: none;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ---------- Accordion (FAQ) ---------- */
+
+.accordion-item {
+    border-bottom: 1px solid var(--clr-butter);
+}
+
+.accordion-item h3 {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+}
+
+.accordion-trigger {
+    display: flex;
     justify-content: space-between;
-    gap: 60px;
-   }
-    /* ===== Image (left side) ===== */
-   .hero-image {
-    flex: 1;
-    max-width: 480px;
-   }
-
-   .hero-image img{
+    align-items: center;
+    gap: 1rem;
     width: 100%;
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    display:block
-   }
-   
-    /* ===== Text (right side) ===== */
-    .hero-text {
-        flex: 1;
-        max-width: 520px;
-    }
+    padding: 1rem 0;
+    background: none;
+    border: none;
+    font: inherit;
+    font-weight: 700;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
 
-    .hero-text h1 {
-        font-size: 2.4rem;
-        line-height: 1.25;
-        color: var(--colour-chocolate);
-        margin-bottom: 18px;
-        font-weight: 700;
-    }
+.accordion-trigger::after {
+    content: "+";
+    font-size: 1.6rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
 
-    .hero-text p {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        color: var(--colour-chocolate);
-        margin-bottom: 28px;
-    }
+.accordion-trigger[aria-expanded="true"]::after {
+    transform: rotate(45deg);
+}
 
+.accordion-trigger:hover {
+    color: var(--clr-brown-light);
+}
 
-   /* Catalog preview table (index.html) and category tables (products.html) */
-   .table-wrap {
-    overflow-x: auto; /* allows horizontal scrolling on small screens */
-   }
+.accordion-panel p {
+    padding-bottom: 1rem;
+    margin: 0;
+}
 
-   
-    /* Embedded maps (Contact page) - keeps a Google Maps <iframe> (or any
-   embed) scaling proportionally at any screen width instead of
-   overflowing the page or getting squashed. The percentage below sets
-   a 16:9 ratio; using padding instead of the newer aspect-ratio
-   property here since it works in every browser, old or new. */
+/* Collapsed styling only switches on once main.js has run, so with
+   JavaScript off every answer is simply visible. */
+.accordion--ready .accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 0.35s ease, visibility 0s linear 0.35s;
+}
+
+.accordion--ready .accordion-panel.is-open {
+    visibility: visible;
+    transition: max-height 0.35s ease, visibility 0s;
+}
+
+/* ---------- Form feedback ---------- */
+
+.field-error {
+    color: #b3261e;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.field.has-error input,
+.field.has-error select,
+.field.has-error textarea {
+    border-color: #b3261e;
+    background-color: #fff6f5;
+}
+
+.form-summary {
+    background: #fdecea;
+    border-left: 4px solid #b3261e;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    color: #7a1a14;
+}
+
+.char-count,
+.hint {
+    font-size: 0.85rem;
+    color: var(--clr-brown-light);
+    margin-top: 0.25rem;
+}
+
+.char-count {
+    text-align: right;
+}
+
+/* A trap for spam bots: people never see this field */
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* ---------- Enquiry result + email preview ---------- */
+
+.reference {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.status {
+    border-left: 5px solid;
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+    margin: 1rem 0 1.5rem;
+}
+
+.status p {
+    margin: 0.3rem 0 0;
+    max-width: none;
+}
+
+.status-available { background: #e8f5e9; border-color: #2e7d32; }
+.status-limited { background: #fff8e1; border-color: #b26a00; }
+.status-unavailable { background: #fdecea; border-color: #b3261e; }
+
+.note {
+    font-size: 0.95rem;
+    color: var(--clr-brown-light);
+}
+
+.sent-ok,
+.sent-fail {
+    font-weight: 600;
+}
+
+.result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.email-body {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: inherit;
+    background: var(--clr-cream);
+    border: 1px solid var(--clr-butter);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+/* ---------- Interactive map (contact.html) ---------- */
+
+#map-canvas {
+    position: relative;
+    isolation: isolate; /* keeps the map's own layers from sliding over the sticky header */
+    width: 100%;
+    height: 380px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--clr-butter);
+}
+
+.map-pin-wrapper {
+    background: none;
+    border: none;
+}
+
+.map-pin {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: var(--clr-pink);
+    border: 3px solid var(--clr-brown);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: var(--shadow);
+}
+
+.map-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Fallback if someone keeps a Google Maps <iframe> instead of the Leaflet map */
 .map-embed {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     margin-bottom: 1.5rem;
 }
- 
-.map-embed:last-child {
-    margin-bottom: 0;
-}
- 
+
 .map-embed iframe {
     position: absolute;
     top: 0;
@@ -317,356 +1128,117 @@ ul {
     height: 100%;
 }
 
-    table {
-     width: 100%;
-     border-collapse: collapse;
-     
-    }
+/* ---------- Footer extras ---------- */
 
-    caption {
-        font-family: var(--font-heading);
-        font-size: 1.4rem;
-        margin-bottom: 0.75rem;
-        text-align: center;
-    }
-
-    tr, td {
-        padding: 1rem;
-        text-align: center;
-        border: 1px solid var(--colour-chocolate);
-        vertical-align: top;
-    }
-
-    tr {
-        background-color: var(--colour-white);
-        font-family: var(--font-heading);
-        font-size: 1.1rem;
-    }
-
-    tr:hover td {
-       background-color: rgba(247, 198, 217, 0.25);
-    }
-
-    .locations {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-    
-    .loctions section {
-        flex: 1 1 300px;
-    }
-
-    #catalog-preview img {
-        width: 100%;
-        max-width: 250px;
-        height: 300px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease,
-    }
-
-
-    /* Contact page: two bakery locations side by side on desktop *
-    .locations {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-    }
-
-    .location section {
-        flex: 1 1 300px;
-    } */
-
-    /* Forms (enquiry.html + contact.html) */
-    fieldset {
-        border: 2px solid var(--colour-butter);
-        border-radius: var(--radius);
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    legend {
-        font-family: var(--font-heading);
-        font-size: 1.3rem;
-        padding: 0 0.5rem;
-    }
-
-    .form-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.25rem 1.5rem;
-    }
-
-    .field {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 calc(50% - 0.75rem); /* two fields per row on desktop */
-        margin-bottom: 1rem;
-    }
-
-    /* Fields that should take the full width even on desktop (textarea, file upload) */
-    .field-full {
-        flex-basis: 100%;
-    }
-
-    .field label {
-        margin-bottom: 0.35rem;
-        font-weight: 600;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-        font-family: inherit;
-        font-size: 1rem;
-        padding: 0.6rem 0.75rem;
-        border: 1px solid var(--colour-brown-light);
-        border-radius: 8px;
-        background-color: var(--colour-cream);
-    }
-
-    .field textarea {
-        resize: vertical; /* allow vertical resizing only */
-        min-height: 8em;
-    }
-
-  
-    /* ===== Enquiry Form ===== */
-.enquiry-form {
-  max-width: 680px;
-  margin: 0 auto 60px;
+.footer-contact,
+.footer-social {
+    max-width: none;
+    margin-bottom: 0.75rem;
 }
 
-.intro-text {
-  text-align: center;
-  max-width: 560px;
-  margin: 0 auto 40px;
-  color: #5c4a3a;
-  line-height: 1.6;
+.footer-social a {
+    display: inline-block;
+    margin: 0 0.6rem;
+    color: var(--clr-cream);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-/* Card style for each section */
-.form-card {
-  background: #fffdf8;
-  border: 1.5px solid #e8d5a3;
-  border-radius: 16px;
-  padding: 28px 32px 20px;
-  margin-bottom: 28px;
-  box-shadow: 0 6px 18px rgba(74, 55, 40, 0.06);
+.footer-social a:hover {
+    color: var(--clr-pink);
 }
 
-.form-card legend {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.55rem;
-  color: #4a3728;
-  padding: 0 14px;
-  background: #fffdf8;
+.notice {
+    background: var(--clr-butter);
+    border-radius: 8px;
+    padding: 1rem;
 }
 
-/* Individual fields */
-.form-group {
-  margin-bottom: 22px;
+/* ---------- Part 3 responsive tweaks ---------- */
+
+@media (max-width: 900px) {
+    main h1 { font-size: 2.1rem; }
+    #map-canvas { height: 320px; }
 }
 
-.form-group label {
-  display: block;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #4a3728;
-  margin-bottom: 7px;
+@media (max-width: 600px) {
+    main h1 { font-size: 1.8rem; }
+    #map-canvas { height: 280px; }
+    .modal-content { padding: 1.25rem; }
+    .product-grid { grid-template-columns: 1fr; }
+    .summary-list { grid-template-columns: 1fr; gap: 0.1rem; }
+    .summary-list dd { margin-bottom: 0.6rem; }
+    .lightbox img { max-height: 62vh; }
+    .controls .btn { width: 100%; }
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid #e0d0b0;
-  border-radius: 10px;
-  background: #fff;
-  font-size: 1rem;
-  color: #333;
-  transition: border-color 0.25s, box-shadow 0.25s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #f8a5c2;
-  box-shadow: 0 0 0 4px rgba(248, 165, 194, 0.25);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-/* File input */
-.form-group input[type="file"] {
-  padding: 10px;
-  background: #faf6f0;
-  cursor: pointer;
-}
-
-    /* 8. Footer
-   A simple footer with a background colour and some padding. */
-    footer {
-     background-color: var(--colour-chocolate);
-     color: var(--colour-cream);
-     padding: 2rem;
-     text-align: center;
+/* People who ask their device for less motion get no animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 
-    footer p {
-        max-width: none;
-        margin-bottom: 1rem;
+    .reveal {
+        opacity: 1;
+        transform: none;
     }
-
-    footer nav ul {
-        justify-content: center;
-    }
-
-    footer nav a {
-        color: var(--colour-cream);
-    }
-
-    footer nav a:hover,
-    footer nav a:focus {
-        color: var(--colour-pink);
-    }
-
-    footer .email {
-        margin: 4px 0 2px;
-        font-size: 0.95rem;
-    }
-
-    footer .email a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    footer .email a:hover {
-        text-decoration: underline;
-    }
-
-    footer .tagline {
-        margin: 0 0 16px;
-        font-size: 0.9rem;
-        font-style: italic;
-        opacity: 0.85;
-    }
-
-    .social-links {
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
-  justify-content: center; /* or flex-start if you prefer left-aligned */
 }
 
-.social-links a {
-  color: #333; /* change to match your footer text color */
-  font-size: 24px;
-  transition: color 0.2s ease, transform 0.2s ease;
-  text-decoration: none;
+.footer-contact a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-.social-links a:hover {
-  color: #e67e22; /* bakery-style accent color – change as needed */
-  transform: scale(1.15);
+.footer-contact a:hover {
+    color: var(--clr-pink);
 }
 
+/* Spacing touches */
+.table-wrap + p {
+    margin-top: 1.25rem;
+}
 
-    /* 9. RESPONSIVE DESIGN
-   Breakpoints: desktop (default styles above), tablet (<= 900px),
-   mobile (<= 600px). Relative units (rem/em/%) throughout mean most
-   content already resizes itself; the media queries below mainly
-   collapse multi-column layouts down to a single column. */
-    
+footer nav {
+    margin-bottom: 1rem;
+}
 
-   /* ---- Tablet ---- */
-    @media (max-width: 900px) {
-        main {
-            padding: 1.5rem;
-        }
+/* Polish: pop-up tag, anchor offsets for the sticky header, spacing between the two locations */
+.modal-content .product-tag {
+    display: inline-block;
+}
 
-        h1 {font-size: 2.4rem;}
-        h2 {font-size: 1.8rem;}
-        h3 {font-size: 1.4rem;}
+main [id] {
+    scroll-margin-top: 6rem; /* links like #faq and focused headings don't hide under the sticky header */
+}
 
-        .split {
-            flex-direction: column;
-        }
+.locations {
+    margin-bottom: 2.5rem;
+}
 
-        .split-media,
-        .split-content {
-            flex-basis: auto;
-        }
+.locations section {
+    margin-bottom: 0;
+}
 
-        .locations {
-            flex-direction: column;
-        }
+/* Form fit: inputs (especially the file picker) never wider than their card */
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
 
-        .locations section {
-            flex-basis: auto;
-        }
+.field input[type="file"] {
+    padding: 0.4em;
+}
 
-        .field {
-            flex-basis: 100%;
-        }
-    }
-    
-    /* ---- Mobile ---- */
-    @media (max-width: 600px) {
-        header {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 1rem;
-        }
-
-        .hero-container {
-            flex-direction: column;
-            text-align: center;
-            gap: 40px;
-        }
-
-        .hero-image{
-            max-width: 100%;
-        }
-
-        .hero-text h1 {
-            font-size: 1.9rem;
-        }
-
-        nav ul {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5em 0;
-        }
-
-        main {
-            padding: 1rem;
-        }
-
-        main section {
-            padding: 1.25rem;
-        }
-
-        h1 {font-size: 2rem;}
-        h2 {font-size: 1.5rem;}
-
-        caption { font-size: 1.2rem; }
-
-        tr, td {
-            padding: 0.6rem;
-            font-size: 0.9rem;
-        }
-       
-        .btn {
-            width: 100%;
-            text-align: center;
-        }
-    }
-        
-  
+#enquiry-form,
+#contact-form-element {
+    margin-bottom: 2.5rem;
+}

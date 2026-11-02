@@ -1,179 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: unique title (under about 60 characters) and description (under about 160) for every page -->
+    <title>Request a Cake Quote &amp; Estimate | The Usual Bakery</title>
+    <meta name="description" content="Get an instant estimate and availability check for your custom cake, cupcakes or corporate order from The Usual Bakery in Gqeberha. Free quotes, no obligation.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sammie-9510.github.io/TheUsual/enquiry.html">
+    <meta name="theme-color" content="#f5e1a4">
+
+    <!-- Social media previews (Open Graph + Twitter) - shown when a page is shared on Facebook, WhatsApp, X etc. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Usual Bakery">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Request a Cake Quote &amp; Estimate | The Usual Bakery">
+    <meta property="og:description" content="Get an instant estimate and availability check for your custom cake, cupcakes or corporate order from The Usual Bakery in Gqeberha. Free quotes, no obligation.">
+    <meta property="og:url" content="https://sammie-9510.github.io/TheUsual/enquiry.html">
+    <meta property="og:image" content="https://sammie-9510.github.io/TheUsual/assets/images/front cake.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="../assets/images/Logo.png" type="image/svg+xml">
+
+    <!-- Page speed: connect to the font host early, then load the fonts without blocking the page -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Nunito:wght@400;600;700&amp;display=swap">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="icon" type="image/jpeg" href="../assets/images/Logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>THE USUAL BAKERY - ENQUIRY</title>
 </head>
 <body>
-    
-    <header>
-        <div class="logo">
-            <img src="../assets/images/Logo.png" alt="The Usual Bakery logo" width="100" height="100">
-        </div>
-        <h1>THE USUAL BAKERY</h1>
-        <p>Family baking, three generations strong</p>
 
-        <!--main navigation menu - identical on every page so users can move around site easily-->
-        <nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header: logo + main navigation, identical on every page -->
+    <header>
+        <a href="../index.html" class="logo">The Usual</a>
+        <nav aria-label="Main">
             <ul>
                 <li><a href="../index.html">HOME</a></li>
-                <li><a href="./catalog.html">CATALOG</a></li>
                 <li><a href="./about-us.html">ABOUT US</a></li>
-                <li><a href="./enquiry.html">ENQUIRY</a></li>
+                <li><a href="./catalog.html">CATALOG</a></li>
+                <li><a href="./enquiry.html" aria-current="page">ENQUIRY</a></li>
                 <li><a href="./contact.html">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-     <h2>Send Us an Enquiry</h2>
-       <p class="intro-text">
-          Tell us about your event and we will get back to you with pricing and availability. 
-          The more detail you give us, the better we can plan your order.
-     </p>
-
-  <form action="#" method="post" class="enquiry-form">
-
-    <!-- Your Details -->
-    <fieldset class="form-card">
-      <legend>Your Details</legend>
-
-      <div class="form-group">
-        <label for="full-name">Full Name</label>
-        <input type="text" id="full-name" name="full-name" required>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-    </fieldset>
-
-    <!-- Event Details -->
-    <fieldset class="form-card">
-      <legend>Event Details</legend>
-
-      <div class="form-group">
-        <label for="event-type">Event Type</label>
-        <select id="event-type" name="event-type" required>
-          <option value="">Select an option</option>
-          <option value="wedding">Wedding</option>
-          <option value="birthday">Birthday</option>
-          <option value="corporate">Corporate Event</option>
-          <option value="Anniversary">Anniversary</option>
-          <option value="milestone">Milestone Celebration</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="event-date">Event Date</label>
-        <input type="date" id="event-date" name="event-date" required>
-      </div>
-
-      <div class="form-group">
-        <label for="guests">Number of Guests</label>
-        <input type="number" id="guests" name="guests" min="1" required>
-      </div>
-
-      <div class="form-group">
-        <label for="inspiration-images">Upload Inspiration Images (optional)</label>
-        <input type="file" id="inspiration-images" name="inspiration-images" accept="image/*" multiple>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Tell Us More About What You'd Like</label>
-        <textarea id="message" name="message" rows="5" 
-          placeholder="Describe your vision, theme, or any special requests here..."></textarea>
-      </div>
-    </fieldset>
-
-    <button type="submit" class="btn">Submit Enquiry</button>
-  </form>
-</main>
-      <!-- <h2>Send Us an Enquiry</h2> 
+    <main id="main-content">
+        <h1>Request a Quote</h1>
         <p>
-          Tell us about your event and we will get back to you with pricing and
-            availability. The more detail you give us, the better we can plan your order.  
+            Tell us about your event and get an instant estimate with an availability check.
+            Not sure what to order? Browse the <a href="./catalog.html">catalog</a> first.
         </p>
-         Enquiry form. Field validation and submission handling (e.g. with
-            JavaScript or a backend script) will be added in a later part of
-            this project. For now this is the plain HTML structure only.
-        
-        <form action="#" method="post" class="enquiry-section">
+
+        <!--
+            Enquiry form. Validation, the cost estimate and the AJAX submission are in js/enquiry.js.
+            "action" is where the data is sent. It points at a free test service that only echoes data back
+            (it stores nothing). Replace it with your own form service (e.g. Formspree or Netlify Forms) to receive real enquiries.
+        -->
+        <form id="enquiry-form" action="https://jsonplaceholder.typicode.com/posts" method="post" novalidate>
+
+            <div id="form-summary" class="form-summary" role="alert" hidden></div>
+
             <fieldset>
                 <legend>Your Details</legend>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" required minlength="2" maxlength="60"
+                               autocomplete="name" aria-describedby="full-name-error">
+                        <span class="field-error" id="full-name-error"></span>
+                    </div>
 
-            <label for="full-name">Full Name:</label><br>
-            <input type="text" id="full-name" name="full-name" required><br><br>
+                    <div class="field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required maxlength="100"
+                               autocomplete="email" aria-describedby="email-error">
+                        <span class="field-error" id="email-error"></span>
+                    </div>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="phone">Phone Number:</label><br>
-            <input type="tel" id="phone" name="phone" required><br><br>
-
+                    <div class="field">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required inputmode="tel" autocomplete="tel"
+                               pattern="(\+27|0)[1-9][0-9 ]{8,12}" title="A South African number, like 041 000 0001 or +27 82 123 4567"
+                               placeholder="e.g. 082 123 4567" aria-describedby="phone-error">
+                        <span class="field-error" id="phone-error"></span>
+                    </div>
+                </div>
             </fieldset>
 
             <fieldset>
                 <legend>Event Details</legend>
-                <label for="event-type">Event Type:</label><br>
-                <select id="event-type" name="event-type" required>
-                    <option value="">Select an option</option>
-                    <option value="wedding">Wedding</option>
-                    <option value="birthday">Birthday</option>
-                    <option value="corporate">Corporate Event</option>
-                    <option value="Anniversary">Anniversary</option>
-                    <option value="milestone">Milestone Celebration</option>
-                    <option value="other">Other</option>
-                </select><br><br>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="event-type">Type of Event</label>
+                        <select id="event-type" name="event-type" required aria-describedby="event-type-error">
+                            <option value="">Choose&hellip;</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="milestone">Milestone Celebration</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="field-error" id="event-type-error"></span>
+                    </div>
 
-                <label for="event-date">Event Date:</label><br>
-                <input type="date" id="event-date" name="event-date" required><br><br>
+                    <div class="field">
+                        <label for="event-date">Event Date</label>
+                        <input type="date" id="event-date" name="event-date" required aria-describedby="event-date-error">
+                        <span class="field-error" id="event-date-error"></span>
+                    </div>
 
-                <label for="guests">Number of Guests:</label><br>
-                <input type="number" id="guests" name="guests" min="1" required><br><br>
+                    <div class="field">
+                        <label for="guest-count">Estimated Number of Guests</label>
+                        <input type="number" id="guest-count" name="guest-count" required min="1" max="500" step="1"
+                               inputmode="numeric" aria-describedby="guest-count-error">
+                        <span class="field-error" id="guest-count-error"></span>
+                    </div>
 
-                <label for="inspiration-images">Upload an Inspiration Images (optional):</label><br>
-                <input type="file" id="inspiration-images" name="inspiration-images" accept="image/*" multiple><br><br>
+                    <div class="field">
+                        <label for="delivery">Collection or Delivery</label>
+                        <select id="delivery" name="delivery" required aria-describedby="delivery-error">
+                            <option value="">Choose&hellip;</option>
+                            <option value="collect">Collect from a bakery (free)</option>
+                            <option value="deliver">Delivery in Gqeberha (R150)</option>
+                        </select>
+                        <span class="field-error" id="delivery-error"></span>
+                    </div>
 
-                <label for="message">Tell Us More About What You'd Like</label><br>
-                <textarea id="message" name="message" rows="6" cols="40" placeholder="Describe your vision, theme, or any special requests here..."></textarea><br><br>
+                    <div class="field full">
+                        <label for="inspiration-image">Upload an Inspiration Image (optional)</label>
+                        <input type="file" id="inspiration-image" name="inspiration-image"
+                               accept="image/png, image/jpeg, image/webp, image/gif" aria-describedby="inspiration-image-error">
+                        <span class="hint">JPG, PNG, WebP or GIF, up to 5 MB.</span>
+                        <span class="field-error" id="inspiration-image-error"></span>
+                    </div>
 
+                    <div class="field full">
+                        <label for="message">Tell Us More About What You'd Like (optional)</label>
+                        <textarea id="message" name="message" rows="6" maxlength="1000" aria-describedby="message-count message-error"></textarea>
+                        <span class="char-count" id="message-count"></span>
+                        <span class="field-error" id="message-error"></span>
+                    </div>
+                </div>
             </fieldset>
 
-            <button type="submit" class= "btn">Submit Enquiry</button>
-        </form>
-    </main> -->
+            <!-- Spam trap: real visitors never see or fill this in (see .honeypot in the CSS) -->
+            <div class="honeypot" aria-hidden="true">
+                <label for="website">Leave this field empty</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
 
+            <button type="submit" class="btn">Get My Estimate</button>
+        </form>
+
+        <!-- The estimate appears here after the form is submitted -->
+        <section id="quote-result" aria-live="polite" hidden></section>
+
+        <!-- FAQ accordion (js/main.js). With JavaScript off, every answer simply shows. -->
+        <section id="faq">
+            <h2>Ordering Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <h3><button type="button" class="accordion-trigger" id="faq-1-button" aria-expanded="false" aria-controls="faq-1">How far ahead should I order?</button></h3>
+                    <div class="accordion-panel" id="faq-1" role="region" aria-labelledby="faq-1-button">
+                        <p>Birthday and milestone cakes need 3 days' notice, corporate orders 5 days, anniversary cakes 7 days and wedding cakes 14 days. The form above checks your date for you.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3><button type="button" class="accordion-trigger" id="faq-2-button" aria-expanded="false" aria-controls="faq-2">Can you cater for allergies or dietary needs?</button></h3>
+                    <div class="accordion-panel" id="faq-2" role="region" aria-labelledby="faq-2-button">
+                        <p>Tell us about any allergies or dietary needs in your message and we will confirm what we can make. Our kitchen handles nuts, gluten, eggs and dairy, so we cannot promise an allergen-free environment.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3><button type="button" class="accordion-trigger" id="faq-3-button" aria-expanded="false" aria-controls="faq-3">Do you deliver?</button></h3>
+                    <div class="accordion-panel" id="faq-3" role="region" aria-labelledby="faq-3-button">
+                        <p>Yes. Delivery within Gqeberha is a flat R150. You can also collect your order for free from either of our <a href="contact.html">two bakeries</a>.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3><button type="button" class="accordion-trigger" id="faq-4-button" aria-expanded="false" aria-controls="faq-4">How do I pay?</button></h3>
+                    <div class="accordion-panel" id="faq-4" role="region" aria-labelledby="faq-4-button">
+                        <p>We take a 50% deposit to secure your date, and the balance on collection or delivery. We send banking details with your confirmed quote.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3><button type="button" class="accordion-trigger" id="faq-5-button" aria-expanded="false" aria-controls="faq-5">Can I change my order after confirming?</button></h3>
+                    <div class="accordion-panel" id="faq-5" role="region" aria-labelledby="faq-5-button">
+                        <p>Changes are free up to 48 hours before your event, as long as we have not started on your decorations. <a href="contact.html">Contact us</a> and we will sort it out.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer: contact summary, social links and a second set of internal links -->
     <footer>
-        <p>&copy; 2026 The Usual Bakery</p>
+        <p>&copy; 2026 The Usual Bakery. All rights reserved.</p>
         <p class="tagline">Your Local Bakery for Custom Cakes and Treats</p>
         <p class="footer-email">Email: <a href="mailto:info@theusualbakery.com">info@theusualbakery.com</a></p>
-        <nav>
+        <p class="footer-social">Follow us:
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class=" fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class=" fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class=" fa-brands fa-tiktok"></i></a>
+        </p>
+        <nav aria-label="Footer">
             <ul>
-                 <li><a href="../index.html">HOME</a></li>
-                <li><a href="./catalog.html">CATALOG</a></li>
+                <li><a href="../index.html">HOME</a></li>
                 <li><a href="./about-us.html">ABOUT US</a></li>
+                <li><a href="./catalog.html">CATALOG</a></li>
+                <li><a href="./enquiry.html" aria-current="page">ENQUIRY</a></li>
                 <li><a href="./contact.html">CONTACT</a></li>
             </ul>
         </nav>
-        <h3 class="follow">Follow Us</h3>
-        <!-- Social media links -->
-  <div class="social-links">
-    <a href="https://www.facebook.com/theusualbakery" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-    <a href="https://www.instagram.com/theusualbakery" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@theusualbakery_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-  </div>
     </footer>
+
+    <script src="../assets/js/config.js" defer></script>
+    <script src="../assets/js/catalog-data.js" defer></script>
+    <script src="../assets/js/validation.js" defer></script>
+    <script src="../assets/js/enquiry.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

@@ -1,132 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO: unique title (under about 60 characters) and description (under about 160) for every page -->
+    <title>Contact &amp; Visit Us in Gqeberha | The Usual Bakery</title>
+    <meta name="description" content="Find The Usual Bakery in Summerstrand and Newton Park, Gqeberha. Opening hours, phone numbers, an interactive map and a contact form.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sammie-9510.github.io/TheUsual/contact.html">
+    <meta name="theme-color" content="#f5e1a4">
+
+    <!-- Social media previews (Open Graph + Twitter) - shown when a page is shared on Facebook, WhatsApp, X etc. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Usual Bakery">
+    <meta property="og:locale" content="en_ZA">
+    <meta property="og:title" content="Contact &amp; Visit Us in Gqeberha | The Usual Bakery">
+    <meta property="og:description" content="Find The Usual Bakery in Summerstrand and Newton Park, Gqeberha. Opening hours, phone numbers, an interactive map and a contact form.">
+    <meta property="og:url" content="https://sammie-9510.github.io/TheUsual/contact.html">
+    <meta property="og:image" content="https://sammie-9510.github.io/TheUsual/assets/images/front cake.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="../assets/images/Logo.png" type="image/svg+xml">
+
+    <!-- Page speed: connect to the font host early, then load the fonts without blocking the page -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Nunito:wght@400;600;700&amp;display=swap">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="icon" type="image/jpeg" href="../assets/images/Logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>THE USUAL BAKERY - CONTACT</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="">
+    <script type="application/ld+json">
+[
+      {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "The Usual Bakery - Main Bakery",
+        "url": "https://sammie-9510.github.io/TheUsual/",
+        "image": "https://sammie-9510.github.io/TheUsual/images/front cake.jpg",
+        "telephone": "+27224567890",
+        "email": "info@theusualbakery.com",
+        "priceRange": "R240 - R3500",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "12 Baker Street, Summerstrand",
+          "addressLocality": "Gqeberha",
+          "postalCode": "6001",
+          "addressCountry": "ZA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -33.99177,
+          "longitude": 25.65720
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "13:00"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "name": "The Usual Bakery - Newton Park Branch",
+        "url": "https://sammie-9510.github.io/TheUsual/",
+        "image": "https://sammie-9510.github.io/TheUsual/images/front cake.jpg",
+        "telephone": "+2711234567",
+        "email": "newtonpark@theusualbakery.com",
+        "priceRange": "R240 - R3500",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "45 Rink Street, Newton Park",
+          "addressLocality": "Gqeberha",
+          "postalCode": "6045",
+          "addressCountry": "ZA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -33.94556,
+          "longitude": 25.56500
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:00",
+            "closes": "13:00"
+          }
+        ]
+      }
+    ]
+    </script>
 </head>
 <body>
-   
-    <header>
-        <div class="logo">
-            <img src="../assets/images/Logo.png" alt="The Usual Bakery logo" width="100" height="100">
-        </div>
-        <h1>THE USUAL BAKERY</h1>
-        <p>Family baking, three generations strong</p>
 
-        <!--main navigation menu - identical on every page so users can move around site easily-->
-        <nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header: logo + main navigation, identical on every page -->
+    <header>
+        <a href="../index.html" class="logo">The Usual</a>
+        <nav aria-label="Main">
             <ul>
                 <li><a href="../index.html">HOME</a></li>
+                <li><a href="./about.html">ABOUT US</a></li>
                 <li><a href="./catalog.html">CATALOG</a></li>
-                <li><a href="./about-us.html">ABOUT US</a></li>
                 <li><a href="./enquiry.html">ENQUIRY</a></li>
-                <li><a href="./contact.html">CONTACT</a></li> 
+                <li><a href="./contact.html" aria-current="page">CONTACT</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2>Visit or Contact Us</h2>
+    <main id="main-content">
+        <h1>Visit or Contact Us</h1>
 
-        <!-- 
-            The assignment brief requires more than one location for this page.
-            The proposal only described a single bakery, so a second branch has
-            been added here as a placeholder - update the name, address and
-            hours to match the real second location once confirmed.
+        <!--
+            The brief needs more than one location on this page. Part 1 described a single bakery, so the
+            Newton Park branch below is a placeholder - change the name, address, phone and hours to real ones.
+            Keep the same details in js/map.js and in the JSON-LD data at the top of this file.
         -->
+        <div class="locations">
             <section id="location-main">
-        <h3>The Usual Bakery - Main Location</h3>
-        <address>
-            <p><strong>The Usual Bakery</strong></p>
-            <p>12 Baker Street, Summerstrand</p>
-            <p>Qqeberha, 6001</p>
-            <p>South Africa</p>
-            <p>Phone: <a href="tel:+274567890"> (+27) 456-7890</a></p>
-            <p>Email: <a href="mailto:info@theusualbakery.com">info@theusualbakery.com</a></p>
-        </address>
-        <p>Hours: Monday to Friday: 08:00am - 18:00pm<br>
-            Saturday: 08:00am - 15:00pm<br>
-            Sunday: Closed
-        </p>
+                <h2>The Usual - Main Bakery</h2>
+                <address>
+                    12 Baker Street, Summerstrand<br>
+                    Gqeberha, 6001<br>
+                    South Africa<br>
+                    Phone: <a href="tel:+27224567890"> (+27) 22-456-7890</a><br>
+                    Email: <a href="mailto:info@theusualbakery.com">info@theusualbakery.com</a>
+                </address>
+                <p>
+                    Monday - Friday: 08:00am - 18:00pm<br>
+                    Saturday: 08:00am - 15:00pm<br>
+                    Sunday: Closed
+                </p>
+            </section>
+
+            <section id="location-branch">
+                <h2>The Usual - Newton Park Branch</h2>
+                <address>
+                    45 Rink Street, Newton Park<br>
+                    Gqeberha, 6045<br>
+                    South Africa<br>
+                    Phone: <a href="tel:+2711234567">(+27) 11-234-5678</a><br>
+                    Email: <a href="mailto:newtonpark@theusualbakery.com">newtonpark@theusualbakery.com</a>
+                </address>
+                <p>
+                    Monday - Friday: 08:00am - 18:00pm<br>
+                    Saturday: 08:00am - 15:00pm<br>
+                    Sunday: Closed
+                </p>
+            </section>
+        </div>
+
+        <!-- Interactive map: drawn by js/map.js using Leaflet + OpenStreetMap -->
+        <section id="map">
+            <h2>Find Us</h2>
+            <p id="map-note">Open each bakery in Google Maps with the links below the map.</p>
+            <div id="map-canvas" role="region" aria-label="Interactive map showing both Usual Bakery locations in Gqeberha"></div>
+            <ul class="map-links">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52940.15424411089!2d25.575034169531243!3d-33.9730169213935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e6532b4f8f07cf7%3A0xbe83dee2f7f179d9!2sSummerstrand%2C%20Gqeberha!5e0!3m2!1sen!2sza!4v1786608047139!5m2!1sen!2sza" width="600" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52954.94870374211!2d25.4920346486328!3d-33.949247199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad17d0a22f07f%3A0x77fed7838a739be9!2sNewton%20Park%2C%20Gqeberha!5e0!3m2!1sen!2sza!4v1786608191262!5m2!1sen!2sza" width="600" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </ul>
         </section>
 
-        <section id="location-branch">
-        <h3>The Usual Bakery - Branch Location</h3>
-        <address>
-            <p><strong>The Usual Bakery</strong></p>
-            <p>45 Rink Street, Newton Park</p>
-            <p>Qqeberha, 60011</p>
-            <p>South Africa</p>
-            <p>Phone: <a href="tel:+2711234567"> (+27) 11-234-5678</a></p>
-            <p>Email: <a href="mailto:newtonpark@theusualbakery.com">newtonpark@theusualbakery.com</a></p>
-        </address>
-        <p>Hours: Monday to Friday: 08:00am - 18:00pm<br>
-            Saturday: 08:00am - 15:00pm<br>
-            Sunday: Closed
-        </p>
-        </section>
-
-        <section id="map" class="map-embed">
-            <h3>Find Us on the Map</h3>
-            <p>Use the map below to find our main location. The branch location is just a short drive away.</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52940.15424411089!2d25.575034169531243!3d-33.9730169213935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e6532b4f8f07cf7%3A0xbe83dee2f7f179d9!2sSummerstrand%2C%20Gqeberha!5e0!3m2!1sen!2sza!4v1786608047139!5m2!1sen!2sza" width="600" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52954.94870374211!2d25.4920346486328!3d-33.949247199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad17d0a22f07f%3A0x77fed7838a739be9!2sNewton%20Park%2C%20Gqeberha!5e0!3m2!1sen!2sza!4v1786608191262!5m2!1sen!2sza" width="600" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </section>
-
+        <!--
+            General contact form. js/contact.js validates it, then builds an email and shows it so the visitor
+            can send it with their own email app. The recipient is set in js/config.js.
+            action="mailto:..." is the fallback if JavaScript is off.
+        -->
         <section id="contact-form">
-          <h3>Send Us a Message</h3>
+            <h2>Send Us a Message</h2>
+            <p>Just have a question? Wanting a price for a cake? Use our <a href="./enquiry.html">quote form</a> instead.</p>
 
-            <form action="#" method="post" class="contact-form">
-    
-               <div class="form-group">
-              <label for="contact-name">Full Name</label>
-             <input type="text" id="contact-name" name="contact-name" required>
-    </div>
+            <form id="contact-form-element" action="mailto:hello@the-usual.co.za" method="post" enctype="text/plain" novalidate>
+                <div id="contact-summary" class="form-summary" role="alert" hidden></div>
 
-    <div class="form-group">
-      <label for="contact-email">Email Address</label>
-      <input type="email" id="contact-email" name="contact-email" required>
-    </div>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="contact-name">Full Name</label>
+                        <input type="text" id="contact-name" name="name" required minlength="2" maxlength="60"
+                               autocomplete="name" aria-describedby="contact-name-error">
+                        <span class="field-error" id="contact-name-error"></span>
+                    </div>
 
-    <div class="form-group">
-      <label for="contact-subject">Subject</label>
-      <input type="text" id="contact-subject" name="contact-subject" required>
-    </div>
+                    <div class="field">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" name="email" required maxlength="100"
+                               autocomplete="email" aria-describedby="contact-email-error">
+                        <span class="field-error" id="contact-email-error"></span>
+                    </div>
 
-    <div class="form-group">
-      <label for="contact-message">Message</label>
-      <textarea id="contact-message" name="contact-message" rows="6" required></textarea>
-    </div>
+                    <div class="field">
+                        <label for="contact-phone">Phone Number (optional)</label>
+                        <input type="tel" id="contact-phone" name="phone" inputmode="tel" autocomplete="tel"
+                               pattern="(\+27|0)[1-9][0-9 ]{8,12}" title="A South African number, like 041 000 0001 or +27 82 123 4567"
+                               aria-describedby="contact-phone-error">
+                        <span class="field-error" id="contact-phone-error"></span>
+                    </div>
 
-    <button type="submit" class="btn">Send Message</button>
-  </form>
-</section>
-       
+                    <div class="field">
+                        <label for="contact-type">Type of Message</label>
+                        <select id="contact-type" name="type" required aria-describedby="contact-type-error">
+                            <option value="">Choose&hellip;</option>
+                            <option value="general">General question</option>
+                            <option value="order">Question about a custom order</option>
+                            <option value="feedback">Feedback or compliment</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="partnership">Corporate or event partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="field-error" id="contact-type-error"></span>
+                    </div>
+
+                    <div class="field full">
+                        <label for="contact-subject">Subject (optional)</label>
+                        <input type="text" id="contact-subject" name="subject" maxlength="80" aria-describedby="contact-subject-error">
+                        <span class="field-error" id="contact-subject-error"></span>
+                    </div>
+
+                    <div class="field full">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="6" required minlength="10" maxlength="800"
+                                  aria-describedby="contact-message-count contact-message-error"></textarea>
+                        <span class="char-count" id="contact-message-count"></span>
+                        <span class="field-error" id="contact-message-error"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Prepare My Email</button>
+            </form>
+
+            <!-- The compiled email appears here (filled in by js/contact.js) -->
+            <div id="email-preview" aria-live="polite" hidden></div>
+        </section>
     </main>
 
+    <!-- Footer: contact summary, social links and a second set of internal links -->
     <footer>
         <p>&copy; 2026 The Usual Bakery</p>
         <p class="tagline">Your Local Bakery for Custom Cakes and Treats</p>
         <p class="footer-email">Email: <a href="mailto:info@theusualbakery.com">info@theusualbakery.com</a></p>
-        <nav>
+        <p class="footer-social">Follow us:
+            <a href="https://www.facebook.com/theusualbakery" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/theusualbakery" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@theusualbakery_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+  </div>
+        </p>
+        <nav aria-label="Footer">
             <ul>
                 <li><a href="../index.html">HOME</a></li>
-                <li><a href="./catalog.html">CATALOG</a></li>
                 <li><a href="./about-us.html">ABOUT US</a></li>
-                <li><a href="./enquiry.html">ENQUIRY</a></li> 
+                <li><a href="./catalog.html">CATALOG</a></li>
+                <li><a href="./enquiry.html">ENQUIRY</a></li>
+                <li><a href="./contact.html" aria-current="page">CONTACT</a></li>
             </ul>
         </nav>
-        <h3 class="follow">Follow Us</h3>
-        <!-- Social media links -->
-  <div class="social-links">
-    <a href="https://www.facebook.com/theusualbakery" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-    <a href="https://www.instagram.com/theusualbakery" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@theusualbakery_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-  </div>
     </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin="" defer></script>
+    <script src="../assets/js/contact.js" defer></script>
+    <script src="../assets/js/validation.js" defer></script>
+    <script src="../assets/js/contact.js" defer></script>
+    <script src="../assets/js/map.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
 </body>
 </html>
