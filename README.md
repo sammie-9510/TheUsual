@@ -378,3 +378,16 @@ screenshots for desktop, tablet and mobile below.
 <img width="1906" height="906" alt="Screenshot 2026-11-02 161004" src="https://github.com/user-attachments/assets/e0cbedb0-d67c-4940-8152-71436035a4bb" />
 <img width="1908" height="910" alt="Screenshot 2026-11-02 160927" src="https://github.com/user-attachments/assets/4b05441e-2dd3-46bc-87ed-0e42972eb014" />
 <img width="1895" height="870" alt="Screenshot 2026-11-02 160912" src="https://github.com/user-attachments/assets/2e1ed694-7ec2-4c56-8b4b-54ec40fc1840" />
+
+## Things to Replace Before Submitting
+| Item | Where and what to do |
+|------|----------------------|
+|Recipient email | js/config.js (recipientEmail). Use your own address while testing the contact form. |
+| Web address | Every .html file (canonical, og:url, og:image), robots.txt and sitemap.xml |
+| Second location | The Newton Park branch is made up to meet the brief’s two-location rule. Update contact.html, js/map.js and the structured data in contact.html together. |
+| Map coordinates | js/map.js (lat/lng) and the JSON-LD data. Right-click the real spot in Google Maps to copy them. |
+| Phone numbers and addresses | All pages (footer), contact.html and the JSON-LD data are placeholders. |
+| Social media links | The footer of every page now points to the Facebook and Instagram home pages. |
+| Prices, estimate rules, FAQ policies | js/products-data.js and js/enquiry.js hold made-up example figures. The delivery fee, deposit and change policy in the FAQ are also examples. |
+| Photos | images/ folder: file names must match those in the HTML and js/products-data.js. Add hero-cake-small.jpg for the srcset example. |
+| Form endpoint | The enquiry.html form action now posts to jsonplaceholder.typicode.com, a free test service that stores nothing. Swap in a service like Formspree to receive real enquiries. |
