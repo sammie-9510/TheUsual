@@ -319,3 +319,24 @@ JavaScript is off, the form falls back to a plain mailto: action.
 - Error handling: Each wrong field gets a red message right under it (linked with aria-
 describedby), and the field is marked aria-invalid. A summary says how many fields need fixing, and 
 focus jumps to the first problem.
+
+### 7. GitHub repository and deployment
+- Commit often, with clear messages. For example: “Add product search and sorting to catalog” or 
+“Add Leaflet map to contact page”.
+- GitHub Pages: The site is hosted on GitHub Pages. In the repository I went to Settings, then 
+Pages, and deployed from the main branch (root folder). There is no build step.
+- Security headers: GitHub Pages ignores the _headers file, so the extra security headers in it 
+do not apply to the live site.
+- After deploying, find https://sammie-9510.github.io/TheUsual/.app in every .html file, 
+robots.txt and sitemap.xml. Then test the live site and send sitemap.xml to Google Search 
+Console.
+
+## Sitemap
+| Page | Purpose |
+|------|---------|
+| index.html (Home) | Hero, catalog preview with category links, photo gallery, call to action |
+| about.html (About Us) | History, mission and baking philosophy |
+| products.html (Products) | Catalog you can search, filter and sort, with a details pop-up |
+| enquiry.html (Enquiry) | Quote form with estimate and availability, ordering FAQ |
+| contact.html (Contact) | Two locations, interactive map, contact form that builds an email |
+
