@@ -147,3 +147,91 @@ Mozilla Contributors (n.d.) *Responsive Images*. Available at: https://developer
 
 
 W3Schools (2024) CSS Media Queries. Available at: https://www.w3schools.com/css/css3_mediaqueries.asp (Accessed: 15 September 2026).
+
+
+
+# PART 3 - README Update
+
+## Project Overview
+“The Usual” is a made-up family bakery in Gqeberha (Port Elizabeth). It is built on more than 70 
+years of recipes, warmth and community spirit. The website shows the bakery’s story, a catalog of 
+custom cakes and pastries that people can search, a tool that gives a price estimate, and contact 
+details with a map you can use. Part 1 built the HTML structure. Part 2 added the CSS styling and 
+made the site work on all screen sizes. Part 3 (this update) adds JavaScript features, search 
+engine optimisation (SEO), checked forms and putting the site online.
+
+## Website Goals
+-	Help visitors find the right cake fast, using search, filters and sorting.
+-	Turn visitors into customers with an enquiry form that gives an instant price estimate and checks
+	if the date is free.
+-	Show up in local searches (like “custom cakes Gqeberha”) using on-page SEO and structured data.
+-	Work on every screen size, with a keyboard, and with a screen reader.
+  
+## Main Features
+- Five pages: Home, About Us, Products, Enquiry and Contact (plus robots.txt and sitemap.xml for
+  search engines).
+- A product catalog that JavaScript builds from a data file. It has live search, a category filter,
+  sorting and a details pop-up.
+-	A photo gallery with a lightbox (previous/next buttons that work with keyboard and swipe).
+-	An enquiry form with checks on the answers, a price estimate, a date check and sending without
+  reloading the page (AJAX). It also has an FAQ accordion.
+-	A contact form that writes a ready-to-send email, and an interactive Leaflet map that shows both
+  bakery locations.
+-	Fade-in effects as you scroll, a back-to-top button, a skip-to-content link, and support for
+  people who turn off animations.
+
+## Part 3 – What Was Done
+1. Working on Feedback
+This is the feedback I got on the marking rubrics so far, and what I did about each point. Each fix
+is also written as a dated entry in the changelog below.
+
+| Rubric item and score |	Feedback received	| What I changed |
+|-----------------------|-------------------|----------------|
+Knowledge: Comments – “Requirements not met” (2 / 5) | “Provide sufficient usage of comments inyour code.” |	I added plenty of comments in all three languages. HTML: 42 comments across the fivepages before, 210 now, so every section,group of form fields, pop-up, script tag and closing tagis explained. CSS: 64 comment blocks before, 192 now, so every rule says what it does and why.JavaScript: every named function (61 out of 61) has a comment above it, plus comments on theimportant steps like the form checks, the estimate rules and the AJAX request. |
+Knowledge: Feedback for Part 1 – 0 / 10	| “Missing records of improvements from part 1.” |	This README now has a “Record of Improvements from Part 1” section and dated changelog entries. They link each improvement to the feedback that caused it. |
+
+Record of Improvements from Part 1
+This section lists each improvement I made because of Part 1 feedback, where you can see it, and when I did it.
+
+| Part 1 feedback |	Improvement made |	Where to see it |	Date |
+|-----------------|------------------|------------------|------|
+Not enough comments in the code (Comments, 2 / 5) | Added comments that explain every part of the Part 1 HTML (header, navigation, sections, tables, forms, footer). I kept the same standard in the CSS and JavaScript I added later |	All .html files; css/style.css; js/ files |	2026-11-02 |
+
+Some other changes to the Part 1 pages (like replacing the product tables with cards built by 
+JavaScript, and rebuilding the forms) were made because Part 2 and Part 3 asked for them, not 
+because of feedback. They are listed in the changelog below.
+
+### 2 Interactive elements
+-	Accordion: This is the ordering FAQ on enquiry.html. The buttons use aria-expanded and aria-
+controls. Only one answer is open at a time, and the height slides open using CSS transitions that 
+JavaScript controls (js/main.js).
+-	Modal (pop-up): Each product has a “View details” pop-up made with the built-in <dialog> element. 
+This means Esc, focus and the dark background work without extra code (js/products.js).
+-	Gallery: Six photos on the home page open full size. They have previous/next buttons, 
+Left/Right/Esc keys, a caption and a counter (js/gallery.js). If JavaScript is off, each link just 
+opens the photo.
+-	Map: contact.html uses the Leaflet library with OpenStreetMap tiles (no API key needed). Both 
+locations have a custom CSS pin and a pop-up with a “Get directions” link (js/map.js). Plain Google 
+Maps links under the map are a backup.
+-	Animation: Sections fade up as you scroll to them (IntersectionObserver), cards lift when you 
+hover, and pop-ups grow in. All movement is turned off for visitors who prefer reduced motion.
+-	DOM manipulation: The product cards, the category drop-down, the estimate result, the email 
+preview and the back-to-top button are all made with document.createElement and filled with 
+textContent (never innerHTML). This also stops script injection.
+
+### 3 Dynamic content
+- js/products-data.js holds 12 products as data. js/products.js builds the cards from that data. To 
+add a product, you only add one object – there is no HTML to copy.
+-	Search checks every word you type against the product name, description, category, serving size 
+and tags. The category filter and the six sort options (featured, name A–Z/Z–A, price low–high/high–
+low) all work together.
+-	The search settings are saved in the web address (for example products.html?
+cat=wedding&sort=price-desc). This lets people bookmark a filtered view, and the category links on 
+the home page open the right filter.
+-	“Get a quote” on a product opens the enquiry form with the event type and message already filled 
+in.
+### 4 On-page SEO
+Keyword research: I picked local search terms that show people are ready to buy. I did not measure 
+how often people search for them. Once the site is live, check this with Google Keyword Planner or 
+Search Console.
+
