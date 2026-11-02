@@ -260,3 +260,16 @@ the menu.
 - Mobile-friendliness. The layout from Part 2 adjusts to screen size. There is a viewport tag and
 large tap targets. I tested at phone, tablet and desktop widths, and no page scrolls sideways.
 
+### 4 Off-page SEO
+These items need actions outside the code. What is already built into the site comes first, then 
+the plan.
+- Social media (built in). Open Graph and Twitter Card tags make shared links show a title, 
+description and image. The footer links point to the bakery’s social profiles (placeholders until 
+real addresses are added).
+- Local SEO (built in). Bakery structured data (JSON-LD) has the address, coordinates, phone and 
+opening hours for both locations on the Contact page, and for the main bakery on the Home page.
+- Backlinks and local listings. This is a plan and is not done yet. Claim a Google Business 
+Profile for each branch, using the same name, address and phone number as the website. List the 
+bakery in Gqeberha business directories and wedding-supplier lists. Ask local suppliers, schools 
+and event venues to link to the site. Post new cake photos on Facebook and Instagram with a link 
+back to the catalog.
