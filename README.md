@@ -287,3 +287,19 @@ handlers. All dynamic text goes in with textContent. A hidden honeypot field cat
 Every form checks its input. A _headers file is also included (written for Netlify). It sets 
 Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-
 Policy and HSTS. GitHub Pages ignores this file, so these headers are not active on the live site.
+
+### 6 Form features and checks
+Both forms use HTML5 attributes (required, type, minlength, maxlength, pattern, min/max) as the 
+first line of defence. Then JavaScript (js/validation.js) takes over. It gives clearer messages, 
+keeps the checks in one shared place, and re-checks a field live as the user fixes it.
+
+| Field | Rule |
+|-------|------|
+| Name	| Required, 2–60 characters, only letters, spaces, hyphens and apostrophes |
+| Email | Required, valid format, up to 100 characters |
+| Phone | South African format (041 000 0001, 0821234567 or +27 82 123 4567). Required on the enquiry form, optional on the contact form |
+| Event date | Required, a real calendar date, not in the past, within 24 months |
+| Guests | Required, a whole number from 1 to 500 |
+| Inspiration image | Optional. JPG, PNG, WebP or GIF, up to 5 MB |
+| Message | Enquiry: optional, up to 1000 characters. Contact: required, 10–800 characters, with a live character counter |
+| Select boxes | Event type, collection/delivery and type of message must be chosen |
