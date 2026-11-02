@@ -340,3 +340,19 @@ Console.
 | enquiry.html (Enquiry) | Quote form with estimate and availability, ordering FAQ |
 | contact.html (Contact) | Two locations, interactive map, contact form that builds an email |
 
+## Files Added or Changed in Part 3
+| File | What it does |
+|------|--------------|
+| js/main.js | Footer year, scroll animation, accordion, back-to-top button (all pages) |
+| js/config.js | Settings in one place: the email address the contact form sends to |
+| js/products-data.js | The 12 products as data, categories, price formatting |
+| js/products.js |Builds product cards; search, filter, sort; details pop-up; saves state in the URL |
+| js/gallery.js | Lightbox for the home page gallery |
+| js/validation.js | Shared checks and error-message helpers |
+| js/enquiry.js | Enquiry checks, estimate, availability, AJAX, showing the result |
+| js/contact.js | Contact checks and email builder |
+| js/map.js | Leaflet map with both locations |
+| robots.txt, sitemap.xml | Instructions for search engines and a list of pages |
+| images | Browser tab icon |
+| css/style.css, all .html files | New parts, accessibility fixes, SEO and structure changes (see changelog) |
+
