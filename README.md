@@ -356,3 +356,25 @@ Console.
 | images | Browser tab icon |
 | css/style.css, all .html files | New parts, accessibility fixes, SEO and structure changes (see changelog) |
 
+## Testing
+- I ran 91 automated checks in a headless Chromium browser, using the Content-Security-Policy 
+. GitHub Pages does not apply that file, so the live site does not have this 
+policy. They cover: every page at desktop, tablet and phone widths with no sideways scrolling and 
+no console or security errors; one h1 per page; the catalog search, filter, sort, deep links and 
+pop-up; the lightbox and accordion; every form check, the estimate sums, AJAX success and failure, 
+and the built email; and both map markers.
+- After the comment changes on 2026-11-02, I ran the whole set again (91 of 91 passed) to make 
+sure adding comments did not change how anything works.
+- Testing found two real bugs, and I fixed them. The product pop-up was stuck in the top-left 
+corner (my CSS reset removed the browser’s default centring for <dialog>). The enquiry form made 
+the page wider than a phone screen (fieldset minimum width). The security policy also blocked the 
+map tiles at first, so I corrected the allowed address.
+- Not tested: Firefox, Safari, real phones, a screen reader, real email apps, the live GitHub 
+Pages site, and live OpenStreetMap tiles. Please test the live site in your own browser and add 
+screenshots for desktop, tablet and mobile below.
+
+<img width="1906" height="842" alt="Screenshot 2026-11-02 160834" src="https://github.com/user-attachments/assets/9d912a92-b70a-4663-9f6f-71b6b9bd0d09" />
+<img width="1895" height="912" alt="Screenshot 2026-11-02 160855" src="https://github.com/user-attachments/assets/c4ce53af-c7ca-4b4b-b5fe-d23b87120684" />
+<img width="1906" height="906" alt="Screenshot 2026-11-02 161004" src="https://github.com/user-attachments/assets/e0cbedb0-d67c-4940-8152-71436035a4bb" />
+<img width="1908" height="910" alt="Screenshot 2026-11-02 160927" src="https://github.com/user-attachments/assets/4b05441e-2dd3-46bc-87ed-0e42972eb014" />
+<img width="1895" height="870" alt="Screenshot 2026-11-02 160912" src="https://github.com/user-attachments/assets/2e1ed694-7ec2-4c56-8b4b-54ec40fc1840" />
