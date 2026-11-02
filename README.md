@@ -416,3 +416,36 @@ fixes were made on different dates.
 | 2026-10-18 | Added the README sections for Part 3 (this document), including the keyword table, form rules, deployment steps and testing notes. |	README |
 | 2026-09-16 | PART 2: Created css/style.css and linked it to every page. CSS reset, colour variables, Nunito and Dancing Script fonts; Flexbox layouts, buttons, hover/focus/active states; styled tables and forms; responsive breakpoints at 900px and 600px; srcset example on the hero image; header redesigned as a white bar with the logo on the left and links on the right. | 	css/style.css, all .html files |
 | 2026-08-15 | PART 1: Created the five HTML pages with header, nav, main and footer, forms, product tables, folder structure (css, js, images) and the sitemap document. |	all .html files |
+
+## References
+- Agafonkin, V. (2026) Leaflet: an open-source JavaScript library for mobile-friendly interactive 
+maps. Available at: https://leafletjs.com/ (Accessed: 23 October 2026).
+- Google (2026) SEO Starter Guide. Google Search Central. Available at: 
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide (Accessed: 23 October 
+2026).
+- Google (2026) Local business structured data. Google Search Central. Available at: 
+https://developers.google.com/search/docs/appearance/structured-data/local-business (Accessed: 23 
+October 2026).
+- Google Fonts (2026) Nunito and Dancing Script font families. Available at: 
+https://fonts.google.com (Accessed: 23 October 2026).
+- Mozilla Developer Network (MDN Web Docs) (2026) <dialog>: the Dialog element. Available at: 
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog (Accessed: 23 October 2026).
+- Mozilla Developer Network (MDN Web Docs) (2026) Fetch API. Available at: 
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API (Accessed: 23 October 2026).
+- Mozilla Developer Network (MDN Web Docs) (2026) Intersection Observer API. Available at: 
+https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API (Accessed: 23 October 
+2026).
+- Mozilla Developer Network (MDN Web Docs) (2026) Client-side form validation. Available at: 
+https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation (Accessed: 23 October 2026).
+- OpenStreetMap Foundation (2026) Tile usage policy. Available at: 
+https://operations.osmfoundation.org/policies/tiles/ (Accessed: 23 October 2026).
+- Schema.org (2026) Bakery. Available at: https://schema.org/Bakery (Accessed: 23 October 2026).
+- The Open Graph protocol (2026) Open Graph protocol. Available at: https://ogp.me/ (Accessed: 23 
+October 2026).
+- GitHub (2026) GitHub Pages documentation. Available at: https://docs.github.com/en/pages 
+(Accessed: 23 October 2026).
+- Typicode (2026) JSONPlaceholder: free fake API for testing and prototyping. Available at: 
+https://jsonplaceholder.typicode.com/ (Accessed: 23 October 2026).
+- Mozilla Developer Network (MDN Web Docs) (2026) CSS Flexible Box Layout; Responsive images; 
+Using media queries (Part 2 references). Available at: https://developer.mozilla.org/ (Accessed: 17 
+September 2026).
