@@ -391,3 +391,27 @@ screenshots for desktop, tablet and mobile below.
 | Prices, estimate rules, FAQ policies | js/products-data.js and js/enquiry.js hold made-up example figures. The delivery fee, deposit and change policy in the FAQ are also examples. |
 | Photos | images/ folder: file names must match those in the HTML and js/products-data.js. Add hero-cake-small.jpg for the srcset example. |
 | Form endpoint | The enquiry.html form action now posts to jsonplaceholder.typicode.com, a free test service that stores nothing. Swap in a service like Formspree to receive real enquiries. |
+
+## Changelog
+All entries add up over time. Part 3 features were built and tested on 2026-10-23. The feedback 
+fixes were made on different dates.
+
+| Date | What changed | Files affected |
+| 2026-11-02 | FEEDBACK (Comments, 2 / 5: “Provide sufficient usage of comments in your code”) – HTML: added explaining comments to all five pages (42 before, 210 now). Every section, form field group, hidden element, pop-up, script tag and closing tag now says what it is for and why. | index.html, about.html, products.html, enquiry.html, contact.html |
+| 2026-11-01 | FEEDBACK (Comments, 2 / 5) – CSS: every rule now has a comment saying what it does and why (64 comment blocks before, 192 now), including the responsive and animation rules. |	css/style.css |
+| 2026-10-31 | FEEDBACK (Comments, 2 / 5) – JavaScript: every named function (61 of 61) now has a comment, plus comments on the form rules, the estimate and availability rules, the AJAX request and the code that builds page parts. All 91 automated tests were run again and still pass. |	js/main.js, config.js, products-data.js, products.js, gallery.js, validation.js, enquiry.js, contact.js, map.js |
+| 2026-10-30 | FEEDBACK (Feedback for Part 1, 0 / 10: “Missing records of improvements from part 1”) – added the “Working on Feedback” table and the “Record of Improvements from Part 1” section to this README, and the dated feedback entries above, so each improvement can be traced to the feedback that caused it. | README |
+| 2026-10-29 | SEO structure: the logo is no longer an h1. Every page now has one unique h1, with h2/h3 below it. Added a skip-to-content link and aria-current on the active menu item. |	all .html files, css/style.css |
+| 2026-10-28 | SEO tags: a unique title and meta description, canonical link, Open Graph and Twitter Card tags and a favicon on every page. Added Bakery JSON-LD structured data (Home and Contact). |	all .html files, images |
+| 2026-10-27 | Created robots.txt and sitemap.xml for crawlers. |	robots.txt, sitemap.xml |
+| 2026-10-26 | Page speed: moved Google Fonts from CSS @import to <link> with preconnect; deferred scripts; added lazy loading and width/height on images; marked the hero image high priority. |	all .html files, css/style.css |
+| 2026-10-25 | Security: SRI hashes on the Leaflet files, rel=noopener on external links, no inline scripts, a honeypot field on the enquiry form | contact.html, enquiry.html, |
+| 2026-10-24 | products.html: replaced the four fixed product tables with cards that JavaScript builds from a data file. Added live search, category filter, sorting, saving state in the URL and a product details pop-up. |	products.html, js/products-data.js, js/products.js, css/style.css |
+| 2026-10-23 | index.html: category labels now link to the filtered catalog. Added a six-photo gallery with a lightbox, and links to the FAQ and contact page. |	index.html, js/gallery.js, css/style.css |
+| 2026-10-22 | enquiry.html: rebuilt the form with HTML5 and JavaScript checks, a delivery option, error messages next to fields, estimated cost, availability check, reference number and AJAX (fetch) sending. Added a five-question FAQ accordion. |	enquiry.html, js/enquiry.js, js/validation.js, js/main.js, css/style.css |
+| 2026-10-21 |contact.html: added a message-type field and an optional phone field. The form now checks the input and builds an email with a Send email button. Replaced the placeholder map image / iframe embeds with an interactive Leaflet map showing both locations. Added iframe max-width so embedded maps can no longer overflow phone screens. |	contact.html, js/contact.js, js/map.js, js/config.js, css/style.css |
+| 2026-10-20 | Whole site: scroll-reveal animation, back-to-top button, footer year that updates itself, a matching footer with address, social links and all page links, and reduced-motion support. |	all .html files, js/main.js, css/style.css |
+| 2026-10-19 | Bug fixes found in testing: product pop-up not centred (browser default removed by CSS reset); enquiry form wider than the phone screen (fieldset min-width); form inputs and file picker overflowing their card; map tiles blocked by the first draft of the security policy.	| css/style.css |
+| 2026-10-18 | Added the README sections for Part 3 (this document), including the keyword table, form rules, deployment steps and testing notes. |	README |
+| 2026-09-16 | PART 2: Created css/style.css and linked it to every page. CSS reset, colour variables, Nunito and Dancing Script fonts; Flexbox layouts, buttons, hover/focus/active states; styled tables and forms; responsive breakpoints at 900px and 600px; srcset example on the hero image; header redesigned as a white bar with the logo on the left and links on the right. | 	css/style.css, all .html files |
+| 2026-08-15 | PART 1: Created the five HTML pages with header, nav, main and footer, forms, product tables, folder structure (css, js, images) and the sitemap document. |	all .html files |
