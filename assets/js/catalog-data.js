@@ -120,7 +120,7 @@
             priceNote: 'per cake',
             serves: '15 to 25 guests',
             leadDays: 3,
-            image: '../assets/images/21st birthday.jpg',
+            image: '../assets/images/21st Birthday.jpg',
             alt: 'Cake decorated for a 21st birthday',
             description: 'Cakes designed for 21st birthdays and other coming-of-age milestones.',
             details: 'Bold numbers, metallic finishes or a photo montage topper to mark the big day.',
