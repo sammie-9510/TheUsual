@@ -245,43 +245,43 @@ corporate pastry platters | Products | Category names, product descriptions |
 cake quote Gqeberha | Enquiry | Title, h1, meta description |
 family bakery Gqeberha / bakery Summerstrand |About, Contact | Titles, headings, address and schema data |
 
-- Title tags and meta descriptions. Every page has its own title (about 50–60 characters) and meta
+- Title tags and meta descriptions: Every page has its own title (about 50–60 characters) and meta
   description (about 130–160 characters), a canonical link and a favicon.
 - Header tags. Each page has exactly one h1 that describes the page. Sections use h2 and sub-
 sections use h3. The logo is no longer an h1 (the automated tests checked this).
-- Image optimisation. Images have clear file names (like wedding-cake-tiered.jpg), useful alt
+- Image optimisation: Images have clear file names (like wedding-cake-tiered.jpg), useful alt
 text, width and height attributes so the page does not jump around, lazy loading below the fold,
 and srcset on the hero image.
-- URL structure. Page names are short and easy to read (about.html, products.html, enquiry.html,
+- URL structure: Page names are short and easy to read (about.html, products.html, enquiry.html,
 contact.html). Filters use clear parameters (?cat=wedding).
-- Internal linking. Text links join related pages, category links go to the filtered catalog, the
+- Internal linking: Text links join related pages, category links go to the filtered catalog, the
 footer lists all pages, and there is a “skip to content” link and a marker for the current page in
 the menu.
-- Mobile-friendliness. The layout from Part 2 adjusts to screen size. There is a viewport tag and
+- Mobile-friendliness: The layout from Part 2 adjusts to screen size. There is a viewport tag and
 large tap targets. I tested at phone, tablet and desktop widths, and no page scrolls sideways.
 
 ### 4 Off-page SEO
 These items need actions outside the code. What is already built into the site comes first, then 
 the plan.
-- Social media (built in). Open Graph and Twitter Card tags make shared links show a title, 
+- Social media (built in): Open Graph and Twitter Card tags make shared links show a title, 
 description and image. The footer links point to the bakery’s social profiles (placeholders until 
 real addresses are added).
-- Local SEO (built in). Bakery structured data (JSON-LD) has the address, coordinates, phone and 
+- Local SEO (built in): Bakery structured data (JSON-LD) has the address, coordinates, phone and 
 opening hours for both locations on the Contact page, and for the main bakery on the Home page.
-- Backlinks and local listings. This is a plan and is not done yet. Claim a Google Business 
+- Backlinks and local listings: This is a plan and is not done yet. Claim a Google Business 
 Profile for each branch, using the same name, address and phone number as the website. List the 
 bakery in Gqeberha business directories and wedding-supplier lists. Ask local suppliers, schools 
 and event venues to link to the site. Post new cake photos on Facebook and Instagram with a link 
 back to the catalog.
 
 ### 5 Extra SEO items
-- robots.txt and sitemap.xml. robots.txt lets all crawlers in and points to the sitemap. 
+- robots.txt and sitemap.xml: robots.txt lets all crawlers in and points to the sitemap. 
 sitemap.xml lists all five pages with their last-changed dates and priorities.
-- Page speed. Google Fonts now load with a <link> and preconnect instead of a CSS @import. All 
+- Page speed: Google Fonts now load with a <link> and preconnect instead of a CSS @import. All 
 scripts use defer. Images below the fold use loading="lazy". The hero image is marked high 
 priority. Leaflet only loads on the Contact page. The CSS and JS are small plain files with no 
 frameworks.
-- Security. Subresource Integrity (SRI) hashes on the Leaflet files mean a changed CDN file will 
+- Security: Subresource Integrity (SRI) hashes on the Leaflet files mean a changed CDN file will 
 not run. External links use rel="noopener noreferrer". There are no inline scripts or event 
 handlers. All dynamic text goes in with textContent. A hidden honeypot field catches spam bots. 
 Every form checks its input. A _headers file is also included (written for Netlify). It sets 
@@ -303,3 +303,19 @@ keeps the checks in one shared place, and re-checks a field live as the user fix
 | Inspiration image | Optional. JPG, PNG, WebP or GIF, up to 5 MB |
 | Message | Enquiry: optional, up to 1000 characters. Contact: required, 10–800 characters, with a live character counter |
 | Select boxes | Event type, collection/delivery and type of message must be chosen |
+
+- enquiry.html: The form’s action attribute holds the address the data is sent to. The data is 
+sent with fetch() (AJAX) as JSON, with an 8-second timeout, so the page does not reload. If it 
+works, the visitor sees their estimate and a confirmation. If sending fails, they still see the 
+estimate, plus an email backup and their reference number.
+- Cost and availability result: After the checks pass, the script works out an estimated cost 
+(price per guest by event type, R450 minimum, R150 delivery, shown with a ±10% range). It also 
+checks availability (notice needed for each event type, Sundays, closed dates, very large orders). 
+The result shows a reference number, the availability status and a cost breakdown.
+- contact.html: After the checks pass, the script puts the name, contact details, message type 
+and message into an email addressed to the person set in js/config.js. It shows the email on screen 
+to check, and a “Send email” button opens the visitor’s email app with everything filled in. If 
+JavaScript is off, the form falls back to a plain mailto: action.
+- Error handling: Each wrong field gets a red message right under it (linked with aria-
+describedby), and the field is marked aria-invalid. A summary says how many fields need fixing, and 
+focus jumps to the first problem.
