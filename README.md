@@ -245,4 +245,18 @@ corporate pastry platters | Products | Category names, product descriptions |
 cake quote Gqeberha | Enquiry | Title, h1, meta description |
 family bakery Gqeberha / bakery Summerstrand |About, Contact | Titles, headings, address and schema data |
 
+- Title tags and meta descriptions. Every page has its own title (about 50–60 characters) and meta
+  description (about 130–160 characters), a canonical link and a favicon.
+- Header tags. Each page has exactly one h1 that describes the page. Sections use h2 and sub-
+sections use h3. The logo is no longer an h1 (the automated tests checked this).
+- Image optimisation. Images have clear file names (like wedding-cake-tiered.jpg), useful alt
+text, width and height attributes so the page does not jump around, lazy loading below the fold,
+and srcset on the hero image.
+- URL structure. Page names are short and easy to read (about.html, products.html, enquiry.html,
+contact.html). Filters use clear parameters (?cat=wedding).
+- Internal linking. Text links join related pages, category links go to the filtered catalog, the
+footer lists all pages, and there is a “skip to content” link and a marker for the current page in
+the menu.
+- Mobile-friendliness. The layout from Part 2 adjusts to screen size. There is a viewport tag and
+large tap targets. I tested at phone, tablet and desktop widths, and no page scrolls sideways.
 
