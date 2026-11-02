@@ -397,6 +397,7 @@ All entries add up over time. Part 3 features were built and tested on 2026-10-2
 fixes were made on different dates.
 
 | Date | What changed | Files affected |
+|------|--------------|----------------|
 | 2026-11-02 | FEEDBACK (Comments, 2 / 5: “Provide sufficient usage of comments in your code”) – HTML: added explaining comments to all five pages (42 before, 210 now). Every section, form field group, hidden element, pop-up, script tag and closing tag now says what it is for and why. | index.html, about.html, products.html, enquiry.html, contact.html |
 | 2026-11-01 | FEEDBACK (Comments, 2 / 5) – CSS: every rule now has a comment saying what it does and why (64 comment blocks before, 192 now), including the responsive and animation rules. |	css/style.css |
 | 2026-10-31 | FEEDBACK (Comments, 2 / 5) – JavaScript: every named function (61 of 61) now has a comment, plus comments on the form rules, the estimate and availability rules, the AJAX request and the code that builds page parts. All 91 automated tests were run again and still pass. |	js/main.js, config.js, products-data.js, products.js, gallery.js, validation.js, enquiry.js, contact.js, map.js |
